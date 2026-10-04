@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MamanCode — Jasa Pembuatan Website Company Profile</title>
+<meta name="description" content="MamanCode - Jasa pembuatan website company profile profesional, cepat, dan murah. Mulai Rp 100.000." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  * { font-family: 'Plus Jakarta Sans', sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; }
+  .gradient-text {
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .fade-in { animation: fadeIn 0.6s ease-in-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform: translateY(0);} }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 8px; }
+  @media (max-width: 640px) {
+    h1 { font-size: 1.75rem !important; line-height: 1.2 !important; }
+  }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 left-0 right-0 z-40 glass border-b border-slate-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="#home" class="flex items-center gap-2 shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-extrabold" id="brandLogo">M</div>
+        <span class="text-lg sm:text-xl font-extrabold gradient-text truncate" id="brandName">MamanCode</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+        <a href="#home" class="hover:text-indigo-600 transition">Home</a>
+        <a href="#layanan" class="hover:text-indigo-600 transition">Layanan</a>
+        <a href="#harga" class="hover:text-indigo-600 transition">Harga</a>
+        <a href="#pembayaran" class="hover:text-indigo-600 transition">Pembayaran</a>
+        <a href="#kontak" class="hover:text-indigo-600 transition">Kontak</a>
+      </div>
+      <a href="#harga" id="navCta" class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-500 rounded-full hover:opacity-90 transition shadow-lg shadow-indigo-200 shrink-0">
+        <i class="fa-solid fa-rocket text-xs"></i> <span id="navCtaText" class="hidden sm:inline">Pesan Sekarang</span>
+        <span class="sm:hidden">Pesan</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
+  <div class="max-w-4xl mx-auto text-center fade-in">
+    <span id="heroBadge" class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold text-indigo-700 bg-indigo-100 rounded-full mb-5">
+      <i class="fa-solid fa-bolt"></i> <span id="heroBadgeText">Proses Cepat • Hasil Profesional</span>
+    </span>
+    <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+      Bikin Website <span class="gradient-text">Company Profile</span> Mulai <span id="heroPrice" class="gradient-text">Rp 100.000</span>
+    </h1>
+    <p id="heroDesc" class="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+      MamanCode siap membantu bisnis, UMKM, dan personal branding kamu punya website company profile yang modern, responsif, dan siap pakai.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
+      <a href="#harga" id="heroBtn1" class="inline-flex items-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base text-white font-semibold bg-gradient-to-r from-indigo-600 to-pink-500 rounded-full hover:opacity-90 transition shadow-lg shadow-indigo-200">
+        <i class="fa-solid fa-tags"></i> <span id="heroBtn1Text">Lihat Harga</span>
+      </a>
+      <a href="#pembayaran" id="heroBtn2" class="inline-flex items-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold text-indigo-700 bg-white border border-indigo-200 rounded-full hover:bg-indigo-50 transition">
+        <i class="fa-solid fa-credit-card"></i> <span id="heroBtn2Text">Cara Bayar</span>
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm text-slate-500">
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> <span id="heroStat1">100+ Website Selesai</span></div>
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> <span id="heroStat2">Garansi Revisi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAYANAN ================= -->
+<section id="layanan" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 sm:mb-14">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4"><span id="layananTitle">Layanan</span> <span class="gradient-text" id="layananTitleBrand">MamanCode</span></h2>
+      <p id="layananDesc" class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">Kami menyediakan berbagai layanan pembuatan website yang bisa disesuaikan dengan kebutuhan bisnis kamu.</p>
+    </div>
+    <div id="layananGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Diisi via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= HARGA ================= -->
+<section id="harga" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 sm:mb-14">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4"><span id="hargaTitle">Harga</span> <span class="gradient-text" id="hargaTitleSub">Spesial</span></h2>
+      <p id="hargaDesc" class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">Harga transparan, tanpa biaya tersembunyi. Diskon bisa berubah sewaktu-waktu!</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+      <!-- Kartu Harga Utama -->
+      <div class="relative p-6 sm:p-8 rounded-3xl bg-white border-2 border-indigo-200 shadow-xl">
+        <div id="discountBadge" class="hidden absolute -top-4 right-6 px-4 py-1 text-xs font-bold text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg">
+          DISKON <span id="discountPercent">0</span>%
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white text-2xl mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-2" id="paketName">Paket Company Profile</h3>
+          <p class="text-slate-500 text-sm mb-6" id="paketDesc">Cocok untuk UMKM, bisnis, dan personal branding</p>
+
+          <div id="normalPriceWrapper" class="mb-2 hidden">
+            <span id="normalPriceEl" class="text-slate-400 line-through text-lg">Rp 100.000</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-6 flex-wrap">
+            <span class="text-2xl sm:text-3xl font-extrabold text-slate-800">Rp</span>
+            <span id="finalPriceEl" class="text-4xl sm:text-5xl font-extrabold gradient-text">100.000</span>
+          </div>
+
+          <ul id="fiturList" class="text-left space-y-3 mb-8">
+            <!-- Diisi via JS -->
+          </ul>
+
+          <button onclick="document.getElementById('pembayaran').scrollIntoView({behavior:'smooth'})" class="w-full py-3 font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-500 rounded-full hover:opacity-90 transition shadow-lg shadow-indigo-200">
+            <i class="fa-solid fa-arrow-down mr-2"></i> Lanjut ke Pembayaran
+          </button>
+        </div>
+      </div>
+
+      <!-- Info Tambahan -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white flex flex-col justify-center">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4" id="whyTitle">Kenapa MamanCode?</h3>
+        <ul id="whyList" class="space-y-4">
+          <!-- Diisi via JS -->
+        </ul>
+        <div class="mt-8 p-4 bg-white/10 rounded-xl text-sm">
+          <i class="fa-solid fa-circle-info mr-2"></i>
+          <span id="whyNote">Butuh fitur custom? Hubungi kami untuk penawaran khusus!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PEMBAYARAN ================= -->
+<section id="pembayaran" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 sm:mb-14">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4"><span id="payTitle">Metode</span> <span class="gradient-text" id="payTitleSub">Pembayaran</span></h2>
+      <p id="payDesc" class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">Bayar sesuai nominal, lalu konfirmasi via WhatsApp. Mudah dan aman.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+        <div class="w-14 h-14 mx-auto rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+        <h3 class="font-bold mb-2">1. Nominal Pembayaran</h3>
+        <p class="text-xs text-slate-500 mb-3">Bayar sesuai nominal berikut</p>
+        <div class="text-2xl sm:text-3xl font-extrabold gradient-text break-words">Rp <span id="payAmount">100.000</span></div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+        <div class="w-14 h-14 mx-auto rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+        <h3 class="font-bold mb-2">2. Pilih Metode</h3>
+        <p class="text-xs text-slate-500 mb-3">DANA atau QRIS di bawah</p>
+        <div class="text-sm text-slate-600">Transfer sesuai nominal, simpan bukti</div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center sm:col-span-2 md:col-span-1">
+        <div class="w-14 h-14 mx-auto rounded-xl bg-green-100 text-green-600 flex items-center justify-center text-xl mb-4">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3 class="font-bold mb-2">3. Konfirmasi WA</h3>
+        <p class="text-xs text-slate-500 mb-3">Kirim bukti transfer ke admin</p>
+        <button onclick="konfirmasiWA()" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-green-500 rounded-full hover:bg-green-600 transition">
+          <i class="fa-brands fa-whatsapp"></i> Konfirmasi
+        </button>
+      </div>
+    </div>
+
+    <h3 class="text-lg sm:text-xl font-bold mb-4"><i class="fa-solid fa-wallet mr-2 text-indigo-600"></i>Pilih Metode Pembayaran</h3>
+    <div id="paymentCards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border-2 border-dashed border-slate-200 text-slate-400 text-center col-span-full">
+        Memuat metode pembayaran...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section id="kontak" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4"><span id="kontakTitle">Siap Bikin</span> <span class="gradient-text" id="kontakTitleSub">Website?</span></h2>
+    <p id="kontakDesc" class="text-slate-600 mb-8 text-sm sm:text-base">Hubungi kami sekarang juga dan konsultasikan kebutuhan website kamu secara gratis!</p>
+    <a id="waContactBtn" href="#" target="_blank" class="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:opacity-90 transition shadow-lg shadow-green-200">
+      <i class="fa-brands fa-whatsapp text-2xl"></i> <span id="kontakBtnText">Chat via WhatsApp</span>
+    </a>
+    <div class="mt-10 grid sm:grid-cols-3 gap-4 sm:gap-6 text-sm">
+      <div class="p-4 bg-white rounded-xl border border-slate-200">
+        <i class="fa-solid fa-envelope text-indigo-500 text-xl mb-2"></i>
+        <div class="font-semibold">Email</div>
+        <div class="text-slate-500 break-words" id="contactEmail">admin@mamancode.com</div>
+      </div>
+      <div class="p-4 bg-white rounded-xl border border-slate-200">
+        <i class="fa-brands fa-whatsapp text-green-500 text-xl mb-2"></i>
+        <div class="font-semibold">WhatsApp</div>
+        <div class="text-slate-500 break-words" id="contactWA">+62 812-3456-7890</div>
+      </div>
+      <div class="p-4 bg-white rounded-xl border border-slate-200">
+        <i class="fa-solid fa-clock text-pink-500 text-xl mb-2"></i>
+        <div class="font-semibold">Jam Operasional</div>
+        <div class="text-slate-500" id="contactHours">Senin - Sabtu, 06.00 AM - 12.00 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-8 px-4 bg-slate-900 text-slate-400 text-center text-sm">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-3 font-bold text-white text-lg" id="footerBrand">MamanCode</div>
+    <p>&copy; <span id="year"></span> <span id="footerBrand2">MamanCode</span>. All rights reserved. Made with <i class="fa-solid fa-heart text-pink-500"></i> in Indonesia.</p>
+  </div>
+</footer>
+
+<!-- ================= ADMIN LOGIN MODAL ================= -->
+<div id="adminLoginModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 fade-in">
+    <div class="text-center mb-6">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white text-2xl mb-3">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <h3 class="text-2xl font-bold">Admin Login</h3>
+      <p class="text-sm text-slate-500">Masukkan kredensial admin</p>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="text-sm font-semibold">Email</label>
+        <input id="adminEmail" type="email" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+      <div>
+        <label class="text-sm font-semibold">Password</label>
+        <input id="adminPassword" type="password" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="••••••••" />
+      </div>
+      <div id="loginError" class="hidden text-sm text-red-500 text-center"></div>
+      <button onclick="doLogin()" class="w-full py-3 font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-500 rounded-xl hover:opacity-90 transition">
+        <i class="fa-solid fa-right-to-bracket mr-2"></i> Login
+      </button>
+      <button onclick="closeAdminLogin()" class="w-full py-2 text-sm font-semibold text-slate-500 hover:text-slate-800 transition">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+<div id="adminDashboard" class="hidden fixed inset-0 z-50 bg-slate-100 overflow-y-auto">
+  <div class="min-h-screen">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">A</div>
+          <div>
+            <div class="font-bold">Admin Dashboard</div>
+            <div class="text-xs text-slate-500">MamanCode</div>
+          </div>
+        </div>
+        <button onclick="logoutAdmin()" class="px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-red-600 border border-red-200 rounded-full hover:bg-red-50 transition">
+          <i class="fa-solid fa-right-from-bracket mr-1"></i> Logout
+        </button>
+      </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <button onclick="showTab('kontenTab')" id="tab-kontenTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">🏠 Konten</button>
+        <button onclick="showTab('layananTab')" id="tab-layananTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">🎯 Layanan</button>
+        <button onclick="showTab('hargaTab')" id="tab-hargaTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">💰 Harga</button>
+        <button onclick="showTab('payTab')" id="tab-payTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">💳 Pembayaran</button>
+        <button onclick="showTab('waTab')" id="tab-waTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">📱 WA</button>
+        <button onclick="showTab('pesananTab')" id="tab-pesananTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white text-slate-700 border border-slate-200">📋 Pesanan</button>
+      </div>
+
+      <!-- TAB: Konten Website -->
+      <div id="kontenTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Konten Website</h2>
+        <p class="text-sm text-slate-500 mb-6">Ubah semua teks yang tampil di website.</p>
+
+        <h3 class="font-bold mb-3 text-indigo-700">🔷 Brand & Logo</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-sm font-semibold">Nama Brand</label>
+            <input id="c_brandName" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Inisial Logo</label>
+            <input id="c_brandLogo" type="text" maxlength="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3 text-indigo-700">🔷 Hero Section</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Badge Text</label>
+            <input id="c_heroBadge" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Judul Hero (boleh HTML dengan &lt;span class="gradient-text"&gt;)</label>
+            <input id="c_heroTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Deskripsi Hero</label>
+            <textarea id="c_heroDesc" rows="3" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Tombol 1</label>
+            <input id="c_heroBtn1" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Tombol 2</label>
+            <input id="c_heroBtn2" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Statistik 1</label>
+            <input id="c_heroStat1" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Statistik 2</label>
+            <input id="c_heroStat2" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3 text-indigo-700">🔷 Judul Section</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-sm font-semibold">Layanan - Judul</label>
+            <input id="c_layananTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Layanan - Sub Judul</label>
+            <input id="c_layananTitleBrand" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Layanan - Deskripsi</label>
+            <textarea id="c_layananDesc" rows="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Harga - Judul</label>
+            <input id="c_hargaTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Harga - Sub Judul</label>
+            <input id="c_hargaTitleSub" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Harga - Deskripsi</label>
+            <textarea id="c_hargaDesc" rows="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Pembayaran - Judul</label>
+            <input id="c_payTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Pembayaran - Sub Judul</label>
+            <input id="c_payTitleSub" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Pembayaran - Deskripsi</label>
+            <textarea id="c_payDesc" rows="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3 text-indigo-700">🔷 Paket Harga & "Kenapa Kami"</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-sm font-semibold">Nama Paket</label>
+            <input id="c_paketName" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Deskripsi Paket</label>
+            <input id="c_paketDesc" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Fitur Paket (satu per baris)</label>
+            <textarea id="c_fiturList" rows="5" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Judul "Kenapa Kami"</label>
+            <input id="c_whyTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Poin "Kenapa Kami" (satu per baris)</label>
+            <textarea id="c_whyList" rows="5" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Catatan "Kenapa Kami"</label>
+            <input id="c_whyNote" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3 text-indigo-700">🔷 Kontak & Footer</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-sm font-semibold">Kontak - Judul</label>
+            <input id="c_kontakTitle" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Kontak - Sub Judul</label>
+            <input id="c_kontakTitleSub" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Kontak - Deskripsi</label>
+            <textarea id="c_kontakDesc" rows="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Tombol Kontak</label>
+            <input id="c_kontakBtn" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Email Kontak</label>
+            <input id="c_contactEmail" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm font-semibold">Jam Operasional</label>
+            <input id="c_contactHours" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+
+        <button onclick="saveKonten()" class="w-full sm:w-auto px-6 py-3 font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-500 rounded-xl hover:opacity-90 transition shadow-lg shadow-indigo-200">
+          <i class="fa-solid fa-save mr-2"></i> Simpan Semua Konten
+        </button>
+        <span id="kontenSavedMsg" class="sm:ml-4 mt-2 sm:mt-0 inline-block text-sm text-green-600 font-semibold hidden">✓ Tersimpan!</span>
+      </div>
+
+      <!-- TAB: Layanan -->
+      <div id="layananTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Layanan</h2>
+        <p class="text-sm text-slate-500 mb-6">Tambah, edit, atau hapus kartu layanan.</p>
+
+        <div class="p-4 sm:p-5 bg-slate-50 rounded-xl mb-6">
+          <h3 class="font-bold mb-3" id="layananFormTitle">➕ Tambah Layanan</h3>
+          <input type="hidden" id="layananEditIndex" />
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-semibold">Judul</label>
+              <input id="layananJudul" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Company Profile" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Icon (FontAwesome)</label>
+              <input id="layananIcon" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="fa-building" />
+              <p class="text-xs text-slate-400 mt-1">Contoh: fa-building, fa-cart-shopping</p>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm font-semibold">Deskripsi</label>
+              <textarea id="layananDeskripsi" rows="2" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Warna Icon</label>
+              <select id="layananWarna" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="indigo">Indigo</option>
+                <option value="pink">Pink</option>
+                <option value="purple">Purple</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <button onclick="saveLayanan()" class="px-6 py-2.5 font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition">
+              <i class="fa-solid fa-save mr-2"></i> Simpan
+            </button>
+            <button onclick="resetLayananForm()" class="px-6 py-2.5 font-semibold text-slate-600 border border-slate-300 rounded-xl hover:bg-slate-100 transition">Reset</button>
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3">Daftar Layanan</h3>
+        <div id="layananList" class="space-y-3"></div>
+      </div>
+
+      <!-- TAB: Harga -->
+      <div id="hargaTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Pengaturan Harga</h2>
+        <p class="text-sm text-slate-500 mb-6">Atur harga normal dan diskon.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 max-w-2xl">
+          <div>
+            <label class="text-sm font-semibold">Harga Normal (Rp)</label>
+            <input id="inputHargaNormal" type="number" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="100000" />
+            <p class="text-xs text-slate-400 mt-1">Harga asli sebelum diskon</p>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Diskon (%)</label>
+            <input id="inputDiskon" type="number" min="0" max="100" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="0" />
+            <p class="text-xs text-slate-400 mt-1">Isi 0 jika tanpa diskon</p>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-indigo-50 rounded-xl">
+          <div class="text-sm font-semibold text-indigo-900 mb-1">Preview Harga:</div>
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <span id="adminPreviewNormal" class="text-slate-500 line-through">Rp 100.000</span>
+            <span id="adminPreviewFinal" class="text-2xl sm:text-3xl font-extrabold text-indigo-700">Rp 100.000</span>
+            <span id="adminPreviewDiskon" class="text-sm font-bold text-pink-600"></span>
+          </div>
+        </div>
+
+        <button onclick="saveHarga()" class="mt-6 w-full sm:w-auto px-6 py-3 font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-500 rounded-xl hover:opacity-90 transition shadow-lg shadow-indigo-200">
+          <i class="fa-solid fa-save mr-2"></i> Simpan Harga
+        </button>
+        <span id="hargaSavedMsg" class="sm:ml-4 mt-2 sm:mt-0 inline-block text-sm text-green-600 font-semibold hidden">✓ Tersimpan!</span>
+      </div>
+
+      <!-- TAB: Pembayaran -->
+      <div id="payTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Metode Pembayaran</h2>
+        <p class="text-sm text-slate-500 mb-6">Tambah, edit, atau hapus metode pembayaran.</p>
+
+        <div class="p-4 sm:p-5 bg-slate-50 rounded-xl mb-6">
+          <h3 class="font-bold mb-3" id="payFormTitle">➕ Tambah Metode Pembayaran</h3>
+          <input type="hidden" id="payEditId" />
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-semibold">Nama Metode</label>
+              <input id="payName" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="DANA / QRIS / BCA" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Nomor / ID Tujuan</label>
+              <input id="payNumber" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="0812xxxx" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Atas Nama</label>
+              <input id="payHolder" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Maman" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Tipe</label>
+              <select id="payType" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="dana">DANA (E-Wallet)</option>
+                <option value="qris">QRIS</option>
+                <option value="bank">Bank Transfer</option>
+                <option value="other">Lainnya</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm font-semibold">URL Gambar QRIS / Logo (opsional)</label>
+              <input id="payImage" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="https://i.ibb.co.com/xxxx/qris.png" />
+              <p class="text-xs text-slate-400 mt-1">Upload gambar ke imgbb.com lalu paste link di sini</p>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm font-semibold">Catatan (opsional)</label>
+              <input id="payNote" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Kirim bukti transfer ke WA admin" />
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <button onclick="savePayment()" class="px-6 py-2.5 font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition">
+              <i class="fa-solid fa-save mr-2"></i> Simpan
+            </button>
+            <button onclick="resetPayForm()" class="px-6 py-2.5 font-semibold text-slate-600 border border-slate-300 rounded-xl hover:bg-slate-100 transition">Reset</button>
+          </div>
+        </div>
+
+        <h3 class="font-bold mb-3">Daftar Metode Pembayaran</h3>
+        <div id="payList" class="space-y-3">
+          <div class="text-slate-400 text-sm">Belum ada metode pembayaran.</div>
+        </div>
+      </div>
+
+      <!-- TAB: WA -->
+      <div id="waTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Pengaturan WhatsApp</h2>
+        <p class="text-sm text-slate-500 mb-6">Nomor WA tujuan konfirmasi & kontak.</p>
+
+        <div class="max-w-xl space-y-4">
+          <div>
+            <label class="text-sm font-semibold">Nomor WhatsApp Admin</label>
+            <input id="inputWANumber" type="text" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="6281234567890" />
+            <p class="text-xs text-slate-400 mt-1">Contoh: 6281234567890 (tanpa + atau 0)</p>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Pesan Konfirmasi Pembayaran</label>
+            <textarea id="inputWAMessage" rows="4" class="w-full mt-1 px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            <p class="text-xs text-slate-400 mt-1">Gunakan {nominal} untuk nominal otomatis.</p>
+          </div>
+          <button onclick="saveWA()" class="px-6 py-3 font-semibold text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl hover:opacity-90 transition">
+            <i class="fa-solid fa-save mr-2"></i> Simpan
+          </button>
+          <span id="waSavedMsg" class="ml-4 text-sm text-green-600 font-semibold hidden">✓ Tersimpan!</span>
+        </div>
+      </div>
+
+      <!-- TAB: Pesanan -->
+      <div id="pesananTab" class="admin-panel hidden bg-white rounded-2xl p-4 sm:p-6 shadow-sm">
+        <h2 class="text-lg sm:text-xl font-bold mb-1">Daftar Pesanan</h2>
+        <p class="text-sm text-slate-500 mb-6">Pesan dari pelanggan yang konfirmasi pembayaran.</p>
+        <div id="pesananList" class="space-y-3">
+          <div class="text-slate-400 text-sm">Belum ada pesanan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div id="toast" class="hidden fixed bottom-6 right-6 z-[100] px-5 py-3 rounded-xl shadow-2xl text-white font-semibold"></div>
+
+<!-- ================= FIREBASE ================= -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+import { getFirestore, doc, setDoc, onSnapshot, collection, addDoc, deleteDoc, updateDoc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDmAEREMEbxAFFBXGzwC25C6_Fty_3x7h0",
+  authDomain: "manzcodewebsite.firebaseapp.com",
+  projectId: "manzcodewebsite",
+  storageBucket: "manzcodewebsite.firebasestorage.app",
+  messagingSenderId: "645735217075",
+  appId: "1:645735217075:web:9c01b1c18b3157c7a4bdc6",
+  measurementId: "G-E6MNHJW3GD"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+const ADMIN_CREDENTIALS = {
+  email: "admin@mamancode.com",
+  password: "mamancode2024"
+};
+
+// ===================== DEFAULT CONTENT =====================
+const DEFAULT_CONTENT = {
+  brandName: "MamanCode",
+  brandLogo: "M",
+  heroBadge: "Proses Cepat • Hasil Profesional",
+  heroTitle: 'Bikin Website <span class="gradient-text">Company Profile</span> Mulai <span id="heroPrice" class="gradient-text">Rp 100.000</span>',
+  heroDesc: "MamanCode siap membantu bisnis, UMKM, dan personal branding kamu punya website company profile yang modern, responsif, dan siap pakai.",
+  heroBtn1: "Lihat Harga",
+  heroBtn2: "Cara Bayar",
+  heroStat1: "100+ Website Selesai",
+  heroStat2: "Garansi Revisi",
+  layananTitle: "Layanan",
+  layananTitleBrand: "MamanCode",
+  layananDesc: "Kami menyediakan berbagai layanan pembuatan website yang bisa disesuaikan dengan kebutuhan bisnis kamu.",
+  hargaTitle: "Harga",
+  hargaTitleSub: "Spesial",
+  hargaDesc: "Harga transparan, tanpa biaya tersembunyi. Diskon bisa berubah sewaktu-waktu!",
+  payTitle: "Metode",
+  payTitleSub: "Pembayaran",
+  payDesc: "Bayar sesuai nominal, lalu konfirmasi via WhatsApp. Mudah dan aman.",
+  paketName: "Paket Company Profile",
+  paketDesc: "Cocok untuk UMKM, bisnis, dan personal branding",
+  fiturList: "1 Halaman Company Profile\nDesain Modern & Responsive\nDomain & Hosting Setup\nFree Revisi 2x\nSupport Selamanya",
+  whyTitle: "Kenapa MamanCode?",
+  whyList: "Harga paling ramah kantong, mulai Rp 100.000 saja\nProses pengerjaan cepat 1-3 hari kerja\nDesain bisa request sesuai keinginan\nPembayaran mudah via DANA & QRIS\nGaransi revisi sampai puas",
+  whyNote: "Butuh fitur custom? Hubungi kami untuk penawaran khusus!",
+  kontakTitle: "Siap Bikin",
+  kontakTitleSub: "Website?",
+  kontakDesc: "Hubungi kami sekarang juga dan konsultasikan kebutuhan website kamu secara gratis!",
+  kontakBtn: "Chat via WhatsApp",
+  contactEmail: "admin@mamancode.com",
+  contactHours: "Senin - Sabtu, 06.00 AM - 12.00 PM"
+};
+
+const DEFAULT_LAYANAN = [
+  { judul: "Company Profile", icon: "fa-building", deskripsi: "Website profil perusahaan modern untuk UMKM, startup, dan bisnis lokal.", warna: "indigo" },
+  { judul: "Landing Page", icon: "fa-cart-shopping", deskripsi: "Halaman promosi produk/jasa yang fokus konversi dan penjualan.", warna: "pink" },
+  { judul: "Portfolio Pribadi", icon: "fa-user-tie", deskripsi: "Website portofolio untuk freelancer, designer, dan content creator.", warna: "purple" },
+  { judul: "Responsive Design", icon: "fa-mobile-screen", deskripsi: "Tampilan optimal di HP, tablet, dan desktop. Mobile-friendly.", warna: "green" },
+  { judul: "Support & Revisi", icon: "fa-headset", deskripsi: "Garansi revisi dan support setelah website selesai dikerjakan.", warna: "red" }
+];
+
+// ===================== STATE =====================
+const state = {
+  hargaNormal: 100000,
+  diskon: 0,
+  payments: [],
+  waNumber: "6281234567890",
+  waMessage: "Halo Admin MamanCode, saya sudah melakukan pembayaran untuk pembuatan website dengan nominal Rp {nominal}. Berikut saya lampirkan bukti transfernya. Mohon dikonfirmasi ya, terima kasih!",
+  pesanan: [],
+  konten: { ...DEFAULT_CONTENT },
+  layanan: [...DEFAULT_LAYANAN]
+};
+window.state = state;
+
+// ===================== HELPERS =====================
+function formatRupiah(n) { return new Intl.NumberFormat('id-ID').format(Math.round(n || 0)); }
+function hitungFinal() {
+  const normal = Number(state.hargaNormal) || 0;
+  const disc = Number(state.diskon) || 0;
+  return Math.max(0, normal - (normal * disc / 100));
+}
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/[&<>"']/g, (s) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+
+// ===================== RENDER KONTEN =====================
+function renderKonten() {
+  const c = state.konten || DEFAULT_CONTENT;
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  const setHTML = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
+
+  set('brandName', c.brandName);
+  set('footerBrand', c.brandName);
+  set('footerBrand2', c.brandName);
+  set('brandLogo', c.brandLogo);
+
+  set('heroBadgeText', c.heroBadge);
+  setHTML('heroTitle', c.heroTitle);
+  const heroPriceEl = document.getElementById('heroPrice');
+  if (heroPriceEl) heroPriceEl.textContent = `Rp ${formatRupiah(hitungFinal())}`;
+  set('heroDesc', c.heroDesc);
+  set('heroBtn1Text', c.heroBtn1);
+  set('heroBtn2Text', c.heroBtn2);
+  set('heroStat1', c.heroStat1);
+  set('heroStat2', c.heroStat2);
+
+  set('layananTitle', c.layananTitle);
+  set('layananTitleBrand', c.layananTitleBrand);
+  set('layananDesc', c.layananDesc);
+  set('hargaTitle', c.hargaTitle);
+  set('hargaTitleSub', c.hargaTitleSub);
+  set('hargaDesc', c.hargaDesc);
+  set('payTitle', c.payTitle);
+  set('payTitleSub', c.payTitleSub);
+  set('payDesc', c.payDesc);
+  set('paketName', c.paketName);
+  set('paketDesc', c.paketDesc);
+  set('whyTitle', c.whyTitle);
+  set('whyNote', c.whyNote);
+  set('kontakTitle', c.kontakTitle);
+  set('kontakTitleSub', c.kontakTitleSub);
+  set('kontakDesc', c.kontakDesc);
+  set('kontakBtnText', c.kontakBtn);
+  set('contactEmail', c.contactEmail);
+  set('contactHours', c.contactHours);
+
+  const fiturList = document.getElementById('fiturList');
+  if (fiturList) {
+    const items = (c.fiturList || '').split('\n').map(s => s.trim()).filter(Boolean);
+    fiturList.innerHTML = items.map(t => `<li class="flex items-start gap-3 text-sm"><i class="fa-solid fa-circle-check text-green-500 mt-0.5 shrink-0"></i> <span>${escapeHtml(t)}</span></li>`).join('');
+  }
+
+  const whyList = document.getElementById('whyList');
+  if (whyList) {
+    const items = (c.whyList || '').split('\n').map(s => s.trim()).filter(Boolean);
+    whyList.innerHTML = items.map(t => `<li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-300 mt-1 shrink-0"></i> <span>${escapeHtml(t)}</span></li>`).join('');
+  }
+}
+
+// ===================== RENDER LAYANAN =====================
+function renderLayananGrid() {
+  const grid = document.getElementById('layananGrid');
+  if (!grid) return;
+  if (!state.layanan || state.layanan.length === 0) {
+    grid.innerHTML = `<div class="text-slate-400 text-sm col-span-full text-center">Belum ada layanan.</div>`;
+    return;
+  }
+  const colorMap = {
+    indigo: ['bg-indigo-100','text-indigo-600'],
+    pink: ['bg-pink-100','text-pink-600'],
+    purple: ['bg-purple-100','text-purple-600'],
+    green: ['bg-green-100','text-green-600'],
+    yellow: ['bg-yellow-100','text-yellow-600'],
+    red: ['bg-red-100','text-red-600'],
+    blue: ['bg-blue-100','text-blue-600']
+  };
+  grid.innerHTML = state.layanan.map(l => {
+    const [bg, txt] = colorMap[l.warna] || colorMap.indigo;
+    return `
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition">
+        <div class="w-12 h-12 rounded-xl ${bg} ${txt} flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid ${escapeHtml(l.icon || 'fa-star')}"></i>
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold mb-2">${escapeHtml(l.judul || '')}</h3>
+        <p class="text-slate-600 text-sm">${escapeHtml(l.deskripsi || '')}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderLayananList() {
+  const list = document.getElementById('layananList');
+  if (!list) return;
+  if (!state.layanan || state.layanan.length === 0) {
+    list.innerHTML = `<div class="text-slate-400 text-sm">Belum ada layanan.</div>`;
+    return;
+  }
+  list.innerHTML = state.layanan.map((l, i) => `
+    <div class="flex flex-wrap items-center justify-between gap-3 p-4 border border-slate-200 rounded-xl">
+      <div class="flex items-center gap-3 min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+          <i class="fa-solid ${escapeHtml(l.icon || 'fa-star')}"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="font-semibold truncate">${escapeHtml(l.judul || '')}</div>
+          <div class="text-xs text-slate-500 line-clamp-1">${escapeHtml(l.deskripsi || '')}</div>
+        </div>
+      </div>
+      <div class="flex gap-2 shrink-0">
+        <button onclick="editLayanan(${i})" class="px-3 py-1.5 text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button onclick="hapusLayanan(${i})" class="px-3 py-1.5 text-xs font-semibold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===================== RENDER HARGA =====================
+function renderHarga() {
+  const normal = Number(state.hargaNormal) || 0;
+  const disc = Number(state.diskon) || 0;
+  const final = hitungFinal();
+
+  const heroPrice = document.getElementById('heroPrice');
+  if (heroPrice) heroPrice.textContent = `Rp ${formatRupiah(final)}`;
+
+  const finalEl = document.getElementById('finalPriceEl');
+  if (finalEl) finalEl.textContent = formatRupiah(final);
+
+  const normalEl = document.getElementById('normalPriceEl');
+  const normalWrap = document.getElementById('normalPriceWrapper');
+  if (normalEl && normalWrap) {
+    if (disc > 0 && normal > final) {
+      normalEl.textContent = `Rp ${formatRupiah(normal)}`;
+      normalWrap.classList.remove('hidden');
+    } else normalWrap.classList.add('hidden');
+  }
+
+  const badge = document.getElementById('discountBadge');
+  const discPct = document.getElementById('discountPercent');
+  if (badge && discPct) {
+    if (disc > 0) { discPct.textContent = disc; badge.classList.remove('hidden'); }
+    else badge.classList.add('hidden');
+  }
+
+  const payAmount = document.getElementById('payAmount');
+  if (payAmount) payAmount.textContent = formatRupiah(final);
+
+  const apn = document.getElementById('adminPreviewNormal');
+  const apf = document.getElementById('adminPreviewFinal');
+  const apd = document.getElementById('adminPreviewDiskon');
+  if (apn && apf && apd) {
+    apn.textContent = `Rp ${formatRupiah(normal)}`;
+    apf.textContent = `Rp ${formatRupiah(final)}`;
+    apd.textContent = disc > 0 ? `(Hemat ${disc}% = Rp ${formatRupiah(normal - final)})` : '';
+  }
+
+  const inpNormal = document.getElementById('inputHargaNormal');
+  const inpDisc = document.getElementById('inputDiskon');
+  if (inpNormal && !inpNormal.value) inpNormal.value = normal;
+  if (inpDisc && !inpDisc.value) inpDisc.value = disc;
+}
+
+// ===================== RENDER PEMBAYARAN =====================
+function renderPaymentCards() {
+  const container = document.getElementById('paymentCards');
+  if (!container) return;
+  if (!state.payments || state.payments.length === 0) {
+    container.innerHTML = `<div class="p-6 rounded-2xl border-2 border-dashed border-slate-200 text-slate-400 text-center col-span-full">Belum ada metode pembayaran. Silakan hubungi admin.</div>`;
+    return;
+  }
+  const icons = { dana: 'fa-wallet', qris: 'fa-qrcode', bank: 'fa-building-columns', other: 'fa-credit-card' };
+  container.innerHTML = state.payments.map((p) => {
+    const icon = icons[p.type] || 'fa-credit-card';
+    const isQris = p.type === 'qris';
+    return `
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid ${icon}"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="font-bold truncate">${escapeHtml(p.name || '-')}</div>
+            <div class="text-xs text-slate-500 uppercase">${escapeHtml(p.type || '')}</div>
+          </div>
+        </div>
+        ${p.number ? `<div class="mb-2"><div class="text-xs text-slate-500">Nomor/ID</div><div class="font-semibold text-base sm:text-lg break-all">${escapeHtml(p.number)}</div></div>` : ''}
+        ${p.holder ? `<div class="mb-2"><div class="text-xs text-slate-500">Atas Nama</div><div class="font-semibold">${escapeHtml(p.holder)}</div></div>` : ''}
+        ${isQris && p.image ? `<div class="mt-3 mb-2 text-center"><img src="${escapeHtml(p.image)}" alt="QRIS" class="w-full max-w-[200px] mx-auto rounded-xl border border-slate-200" onerror="this.style.display='none'"/><div class="text-xs text-slate-400 mt-1">Scan QRIS di atas</div></div>` : ''}
+        ${!isQris && p.image ? `<img src="${escapeHtml(p.image)}" class="mt-3 w-full rounded-xl border border-slate-200" onerror="this.style.display='none'"/>` : ''}
+        ${p.note ? `<div class="mt-3 text-xs text-slate-500 bg-slate-50 p-2 rounded-lg"><i class="fa-solid fa-circle-info mr-1"></i>${escapeHtml(p.note)}</div>` : ''}
+        <button onclick="konfirmasiWA('${escapeHtml(p.name || '').replace(/'/g, "\\'")}')" class="mt-4 w-full py-2.5 text-sm font-semibold text-white bg-green-500 rounded-xl hover:bg-green-600 transition">
+          <i class="fa-brands fa-whatsapp mr-2"></i> Konfirmasi Sudah Bayar
+        </button>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderPayList() {
+  const list = document.getElementById('payList');
+  if (!list) return;
+  if (!state.payments || state.payments.length === 0) {
+    list.innerHTML = `<div class="text-slate-400 text-sm">Belum ada metode pembayaran.</div>`;
+    return;
+  }
+  list.innerHTML = state.payments.map((p, i) => `
+    <div class="flex flex-wrap items-center justify-between gap-3 p-4 border border-slate-200 rounded-xl">
+      <div class="flex items-center gap-3 min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-credit-card"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="font-semibold truncate">${escapeHtml(p.name || '-')}</div>
+          <div class="text-xs text-slate-500 truncate">${escapeHtml(p.number || '-')} • ${escapeHtml(p.holder || '-')} • ${escapeHtml(p.type || '')}</div>
+        </div>
+      </div>
+      <div class="flex gap-2 shrink-0">
+        <button onclick="editPayment(${i})" class="px-3 py-1.5 text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button onclick="hapusPayment(${i})" class="px-3 py-1.5 text-xs font-semibold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderPesanan() {
+  const list = document.getElementById('pesananList');
+  if (!list) return;
+  if (!state.pesanan || state.pesanan.length === 0) {
+    list.innerHTML = `<div class="text-slate-400 text-sm">Belum ada pesanan.</div>`;
+    return;
+  }
+  list.innerHTML = state.pesanan.map((p) => `
+    <div class="p-4 border border-slate-200 rounded-xl">
+      <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+        <div>
+          <div class="font-bold">${escapeHtml(p.metode || 'Pembayaran')}</div>
+          <div class="text-xs text-slate-500">${p.createdAt ? new Date(p.createdAt.seconds * 1000).toLocaleString('id-ID') : '-'}</div>
+        </div>
+        <div class="font-bold text-green-600">Rp ${formatRupiah(p.nominal || 0)}</div>
+      </div>
+      <div class="text-sm text-slate-600 space-y-1">
+        ${p.nama ? `<div><b>Nama:</b> ${escapeHtml(p.nama)}</div>` : ''}
+        ${p.wa ? `<div><b>WA:</b> ${escapeHtml(p.wa)}</div>` : ''}
+        ${p.catatan ? `<div><b>Catatan:</b> ${escapeHtml(p.catatan)}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===================== KONFIRMASI WA =====================
+window.konfirmasiWA = function(metode = '') {
+  const nominal = hitungFinal();
+  const waNumber = (state.waNumber || '').replace(/[^0-9]/g, '');
+  let msg = state.waMessage || 'Halo Admin, saya sudah bayar Rp {nominal}.';
+  msg = msg.replace(/{nominal}/g, `Rp ${formatRupiah(nominal)}`);
+  if (metode) msg += `\n\nMetode: ${metode}`;
+
+  const nama = prompt('Masukkan nama Anda (opsional):', '') || '';
+  const waUser = prompt('Masukkan nomor WhatsApp Anda (opsional):', '') || '';
+  const catatan = prompt('Catatan tambahan (opsional):', '') || '';
+
+  if (nama || waUser || catatan) msg += `\nNama: ${nama}\nWA Saya: ${waUser}\nCatatan: ${catatan}`;
+
+  try {
+    addDoc(collection(db, 'pesanan'), { nama, wa: waUser, catatan, metode, nominal, createdAt: serverTimestamp() });
+  } catch (e) { console.error(e); }
+
+  window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
+// ===================== ADMIN: LOGIN =====================
+window.openAdminLogin = function() {
+  const modal = document.getElementById('adminLoginModal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+};
+window.closeAdminLogin = function() {
+  const modal = document.getElementById('adminLoginModal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+};
+window.doLogin = function() {
+  const email = document.getElementById('adminEmail').value.trim();
+  const pass = document.getElementById('adminPassword').value;
+  const errEl = document.getElementById('loginError');
+  if (email === ADMIN_CREDENTIALS.email && pass === ADMIN_CREDENTIALS.password) {
+    errEl.classList.add('hidden');
+    closeAdminLogin();
+    sessionStorage.setItem('mamancode_admin', '1');
+    openDashboard();
+  } else {
+    errEl.textContent = 'Email atau password salah!';
+    errEl.classList.remove('hidden');
+  }
+};
+window.logoutAdmin = function() {
+  sessionStorage.removeItem('mamancode_admin');
+  document.getElementById('adminDashboard').classList.add('hidden');
+  document.body.style.overflow = '';
+  showToast('Logout berhasil', 'bg-slate-700');
+};
+window.openDashboard = function() {
+  document.getElementById('adminDashboard').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  showTab('kontenTab');
+  renderPayList();
+  renderPesanan();
+  renderHarga();
+  renderLayananList();
+  fillKontenForm();
+};
+
+// ===================== ADMIN: TABS =====================
+window.showTab = function(tabId) {
+  document.querySelectorAll('.admin-panel').forEach(p => p.classList.add('hidden'));
+  document.getElementById(tabId).classList.remove('hidden');
+  document.querySelectorAll('.admin-tab').forEach(t => {
+    t.classList.remove('bg-indigo-600','text-white');
+    t.classList.add('bg-white','text-slate-700','border','border-slate-200');
+  });
+  const active = document.getElementById('tab-' + tabId);
+  if (active) {
+    active.classList.remove('bg-white','text-slate-700','border','border-slate-200');
+    active.classList.add('bg-indigo-600','text-white');
+  }
+  if (tabId === 'kontenTab') fillKontenForm();
+};
+
+// ===================== FORM KONTEN =====================
+const KONTEN_FIELDS = [
+  'brandName','brandLogo','heroBadge','heroTitle','heroDesc','heroBtn1','heroBtn2','heroStat1','heroStat2',
+  'layananTitle','layananTitleBrand','layananDesc','hargaTitle','hargaTitleSub','hargaDesc',
+  'payTitle','payTitleSub','payDesc','paketName','paketDesc','fiturList',
+  'whyTitle','whyList','whyNote','kontakTitle','kontakTitleSub','kontakDesc','kontakBtn',
+  'contactEmail','contactHours'
+];
+
+function fillKontenForm() {
+  const c = state.konten || DEFAULT_CONTENT;
+  KONTEN_FIELDS.forEach(f => {
+    const el = document.getElementById('c_' + f);
+    if (el) el.value = c[f] || '';
+  });
+}
+
+window.saveKonten = async function() {
+  const newC = {};
+  KONTEN_FIELDS.forEach(f => {
+    const el = document.getElementById('c_' + f);
+    newC[f] = el ? el.value : '';
+  });
+  state.konten = newC;
+  try {
+    await setDoc(doc(db, 'settings', 'konten'), newC, { merge: true });
+    const msg = document.getElementById('kontenSavedMsg');
+    msg.classList.remove('hidden');
+    setTimeout(() => msg.classList.add('hidden'), 2000);
+    showToast('Konten berhasil disimpan', 'bg-green-600');
+  } catch (e) { console.error(e); showToast('Gagal menyimpan', 'bg-red-500'); }
+  renderKonten();
+};
+
+// ===================== LAYANAN =====================
+window.saveLayanan = async function() {
+  const editIndex = document.getElementById('layananEditIndex').value;
+  const judul = document.getElementById('layananJudul').value.trim();
+  const icon = document.getElementById('layananIcon').value.trim() || 'fa-star';
+  const deskripsi = document.getElementById('layananDeskripsi').value.trim();
+  const warna = document.getElementById('layananWarna').value;
+
+  if (!judul) { showToast('Judul wajib diisi', 'bg-red-500'); return; }
+
+  const arr = [...(state.layanan || [])];
+  const data = { judul, icon, deskripsi, warna };
+
+  if (editIndex !== '' && editIndex !== null && editIndex !== undefined) {
+    arr[Number(editIndex)] = data;
+  } else {
+    arr.push(data);
+  }
+
+  state.layanan = arr;
+  try {
+    await setDoc(doc(db, 'settings', 'layanan'), { items: arr }, { merge: true });
+    showToast('Layanan disimpan', 'bg-green-600');
+  } catch (e) { console.error(e); }
+  resetLayananForm();
+  renderLayananGrid();
+  renderLayananList();
+};
+
+window.resetLayananForm = function() {
+  document.getElementById('layananEditIndex').value = '';
+  document.getElementById('layananJudul').value = '';
+  document.getElementById('layananIcon').value = '';
+  document.getElementById('layananDeskripsi').value = '';
+  document.getElementById('layananWarna').value = 'indigo';
+  document.getElementById('layananFormTitle').textContent = '➕ Tambah Layanan';
+};
+
+window.editLayanan = function(index) {
+  const l = state.layanan[index];
+  if (!l) return;
+  document.getElementById('layananEditIndex').value = index;
+  document.getElementById('layananJudul').value = l.judul || '';
+  document.getElementById('layananIcon').value = l.icon || '';
+  document.getElementById('layananDeskripsi').value = l.deskripsi || '';
+  document.getElementById('layananWarna').value = l.warna || 'indigo';
+  document.getElementById('layananFormTitle').textContent = '✏️ Edit Layanan';
+  document.getElementById('layananTab').scrollIntoView({behavior:'smooth'});
+};
+
+window.hapusLayanan = async function(index) {
+  const l = state.layanan[index];
+  if (!l) return;
+  if (!confirm(`Hapus layanan "${l.judul}"?`)) return;
+  const arr = [...state.layanan];
+  arr.splice(index, 1);
+  state.layanan = arr;
+  try {
+    await setDoc(doc(db, 'settings', 'layanan'), { items: arr }, { merge: true });
+    showToast('Layanan dihapus', 'bg-red-500');
+  } catch (e) { console.error(e); }
+  renderLayananGrid();
+  renderLayananList();
+};
+
+// ===================== HARGA =====================
+window.saveHarga = async function() {
+  const normal = Number(document.getElementById('inputHargaNormal').value) || 0;
+  const disc = Number(document.getElementById('inputDiskon').value) || 0;
+  state.hargaNormal = normal;
+  state.diskon = Math.max(0, Math.min(100, disc));
+  try {
+    await setDoc(doc(db, 'settings', 'harga'), { hargaNormal: state.hargaNormal, diskon: state.diskon, updatedAt: serverTimestamp() }, { merge: true });
+  } catch (e) { console.error(e); }
+  renderHarga();
+  const msg = document.getElementById('hargaSavedMsg');
+  msg.classList.remove('hidden');
+  setTimeout(() => msg.classList.add('hidden'), 2000);
+  showToast('Harga berhasil disimpan', 'bg-green-600');
+};
+
+function updateHargaPreview() {
+  const n = Number(document.getElementById('inputHargaNormal').value) || 0;
+  const d = Number(document.getElementById('inputDiskon').value) || 0;
+  const final = n - (n * d / 100);
+  document.getElementById('adminPreviewNormal').textContent = `Rp ${formatRupiah(n)}`;
+  document.getElementById('adminPreviewFinal').textContent = `Rp ${formatRupiah(final)}`;
+  document.getElementById('adminPreviewDiskon').textContent = d > 0 ? `(Hemat ${d}%)` : '';
+}
+document.getElementById('inputHargaNormal').addEventListener('input', updateHargaPreview);
+document.getElementById('inputDiskon').addEventListener('input', updateHargaPreview);
+
+// ===================== PAYMENT =====================
+window.savePayment = async function() {
+  const editId = document.getElementById('payEditId').value;
+  const name = document.getElementById('payName').value.trim();
+  const number = document.getElementById('payNumber').value.trim();
+  const holder = document.getElementById('payHolder').value.trim();
+  const type = document.getElementById('payType').value;
+  const image = document.getElementById('payImage').value.trim();
+  const note = document.getElementById('payNote').value.trim();
+  if (!name) { showToast('Nama metode wajib diisi', 'bg-red-500'); return; }
+  const data = { name, number, holder, type, image, note };
+  try {
+    if (editId) {
+      await updateDoc(doc(db, 'payments', editId), data);
+      showToast('Metode pembayaran diupdate', 'bg-green-600');
+    } else {
+      await addDoc(collection(db, 'payments'), { ...data, createdAt: serverTimestamp() });
+      showToast('Metode pembayaran ditambahkan', 'bg-green-600');
+    }
+  } catch (e) { console.error(e); showToast('Gagal menyimpan', 'bg-red-500'); }
+  resetPayForm();
+};
+
+window.resetPayForm = function() {
+  document.getElementById('payEditId').value = '';
+  document.getElementById('payName').value = '';
+  document.getElementById('payNumber').value = '';
+  document.getElementById('payHolder').value = '';
+  document.getElementById('payType').value = 'dana';
+  document.getElementById('payImage').value = '';
+  document.getElementById('payNote').value = '';
+  document.getElementById('payFormTitle').textContent = '➕ Tambah Metode Pembayaran';
+};
+
+window.editPayment = function(index) {
+  const p = state.payments[index];
+  if (!p) return;
+  document.getElementById('payEditId').value = p.id;
+  document.getElementById('payName').value = p.name || '';
+  document.getElementById('payNumber').value = p.number || '';
+  document.getElementById('payHolder').value = p.holder || '';
+  document.getElementById('payType').value = p.type || 'dana';
+  document.getElementById('payImage').value = p.image || '';
+  document.getElementById('payNote').value = p.note || '';
+  document.getElementById('payFormTitle').textContent = '✏️ Edit Metode Pembayaran';
+  document.getElementById('payTab').scrollIntoView({behavior:'smooth'});
+};
+
+window.hapusPayment = async function(index) {
+  const p = state.payments[index];
+  if (!p) return;
+  if (!confirm(`Hapus metode "${p.name}"?`)) return;
+  try {
+    await deleteDoc(doc(db, 'payments', p.id));
+    showToast('Metode dihapus', 'bg-red-500');
+  } catch (e) { console.error(e); }
+};
+
+// ===================== WA =====================
+window.saveWA = async function() {
+  const num = document.getElementById('inputWANumber').value.replace(/[^0-9]/g, '');
+  const msg = document.getElementById('inputWAMessage').value;
+  if (!num) { showToast('Nomor WA wajib diisi', 'bg-red-500'); return; }
+  state.waNumber = num;
+  state.waMessage = msg;
+  try {
+    await setDoc(doc(db, 'settings', 'wa'), { waNumber: num, waMessage: msg, updatedAt: serverTimestamp() }, { merge: true });
+  } catch (e) { console.error(e); }
+  const c = document.getElementById('contactWA');
+  if (c) c.textContent = '+' + num;
+  const wb = document.getElementById('waContactBtn');
+  if (wb) wb.href = `https://wa.me/${num}`;
+  const msgEl = document.getElementById('waSavedMsg');
+  msgEl.classList.remove('hidden');
+  setTimeout(() => msgEl.classList.add('hidden'), 2000);
+  showToast('Pengaturan WA disimpan', 'bg-green-600');
+};
+
+// ===================== TOAST =====================
+window.showToast = function(text, color = 'bg-indigo-600') {
+  const t = document.getElementById('toast');
+  t.className = `fixed bottom-6 right-6 z-[100] px-5 py-3 rounded-xl shadow-2xl text-white font-semibold ${color}`;
+  t.textContent = text;
+  t.classList.remove('hidden');
+  setTimeout(() => t.classList.add('hidden'), 2500);
+};
+
+// ===================== ROUTING =====================
+function checkHash() {
+  const hash = window.location.hash.replace('#', '').toLowerCase();
+  const isLoggedIn = sessionStorage.getItem('mamancode_admin') === '1';
+  if (hash === 'admin') {
+    if (isLoggedIn) openDashboard();
+    else openAdminLogin();
+  }
+}
+window.addEventListener('hashchange', checkHash);
+window.addEventListener('load', checkHash);
+
+// ===================== FIRESTORE LISTENERS =====================
+onSnapshot(doc(db, 'settings', 'harga'), (snap) => {
+  if (snap.exists()) {
+    const d = snap.data();
+    state.hargaNormal = Number(d.hargaNormal) || 100000;
+    state.diskon = Number(d.diskon) || 0;
+  } else {
+    setDoc(doc(db, 'settings', 'harga'), { hargaNormal: 100000, diskon: 0 }, { merge: true });
+  }
+  renderHarga();
+});
+
+onSnapshot(doc(db, 'settings', 'wa'), (snap) => {
+  if (snap.exists()) {
+    const d = snap.data();
+    state.waNumber = d.waNumber || '6281234567890';
+    state.waMessage = d.waMessage || state.waMessage;
+  } else {
+    setDoc(doc(db, 'settings', 'wa'), { waNumber: '6281234567890', waMessage: state.waMessage }, { merge: true });
+  }
+  const c = document.getElementById('contactWA');
+  if (c) c.textContent = '+' + state.waNumber;
+  const wb = document.getElementById('waContactBtn');
+  if (wb) wb.href = `https://wa.me/${state.waNumber}`;
+  const inpN = document.getElementById('inputWANumber');
+  const inpM = document.getElementById('inputWAMessage');
+  if (inpN && !inpN.value) inpN.value = state.waNumber;
+  if (inpM && !inpM.value) inpM.value = state.waMessage;
+});
+
+onSnapshot(doc(db, 'settings', 'konten'), (snap) => {
+  if (snap.exists()) {
+    state.konten = { ...DEFAULT_CONTENT, ...snap.data() };
+  } else {
+    setDoc(doc(db, 'settings', 'konten'), DEFAULT_CONTENT, { merge: true });
+  }
+  renderKonten();
+  renderHarga();
+  const kt = document.getElementById('kontenTab');
+  if (kt && !kt.classList.contains('hidden')) fillKontenForm();
+});
+
+onSnapshot(doc(db, 'settings', 'layanan'), (snap) => {
+  if (snap.exists() && snap.data().items) {
+    state.layanan = snap.data().items;
+  } else {
+    setDoc(doc(db, 'settings', 'layanan'), { items: DEFAULT_LAYANAN }, { merge: true });
+    state.layanan = [...DEFAULT_LAYANAN];
+  }
+  renderLayananGrid();
+  renderLayananList();
+});
+
+onSnapshot(collection(db, 'payments'), (snap) => {
+  state.payments = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderPaymentCards();
+  renderPayList();
+});
+
+onSnapshot(query(collection(db, 'pesanan'), orderBy('createdAt', 'desc')), (snap) => {
+  state.pesanan = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderPesanan();
+});
+
+// ===================== INIT =====================
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('adminEmail').placeholder = ADMIN_CREDENTIALS.email;
+renderKonten();
+renderLayananGrid();
+renderHarga();
+</script>
+
+</body>
+</html>
