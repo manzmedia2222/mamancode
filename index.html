@@ -111,10 +111,8 @@ tailwind.config = {
         <a href="#layanan" class="nav-link hover:text-ink-900 transition">Layanan</a>
         <a href="#harga" class="nav-link hover:text-ink-900 transition">Harga</a>
         <a href="#pembayaran" class="nav-link hover:text-ink-900 transition">Pembayaran</a>
-        <a href="#portofolio" class="nav-link hover:text-ink-900 transition">Portofolio</a>
         <a href="#kontak" class="nav-link hover:text-ink-900 transition">Kontak</a>
       </div>
-      <a href="#portofolio" aria-label="Portofolio" class="lg:hidden ml-auto mr-3 w-10 h-10 flex items-center justify-center border border-ink-200 text-ink-700 hover:border-ink-900 transition"><i class="fa-solid fa-folder-open text-sm"></i></a>
       <a href="#harga" id="navCta" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition border border-ink-900">
         <span id="navCtaText" class="hidden sm:inline">Mulai Proyek</span>
         <span class="sm:hidden">Mulai</span>
@@ -124,8 +122,6 @@ tailwind.config = {
   </div>
 </nav>
 
-<!-- ================= HALAMAN BERANDA ================= -->
-<div id="homePage">
 <!-- ================= HERO ================= -->
 <section id="home" class="pt-28 sm:pt-36 pb-20 sm:pb-28 px-5 sm:px-8 bg-white border-b border-ink-100">
   <div class="max-w-7xl mx-auto">
@@ -337,30 +333,6 @@ tailwind.config = {
   </div>
 </section>
 
-</div><!-- /homePage -->
-
-<!-- ================= HALAMAN PORTOFOLIO (terpisah, tampil saat menu Portofolio dibuka) ================= -->
-<div id="portfolioPage" class="hidden">
-  <section class="pt-28 sm:pt-36 pb-20 sm:pb-28 px-5 sm:px-8 bg-ink-50 min-h-screen">
-    <div class="max-w-7xl mx-auto">
-      <a href="#home" class="inline-flex items-center gap-2 text-sm font-medium text-ink-500 hover:text-ink-900 transition mb-10">
-        <i class="fa-solid fa-arrow-left text-xs"></i> Kembali ke beranda
-      </a>
-      <div class="flex flex-wrap items-end justify-between gap-4 mb-12 sm:mb-16 pb-8 border-b border-ink-200">
-        <div class="max-w-2xl">
-          <div class="text-xs uppercase tracking-[0.2em] text-accent-700 font-semibold mb-4">Portofolio</div>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink-900 leading-[1.05] tracking-tight mb-5">
-            Website yang sudah <em class="italic font-normal text-accent-600">dikerjakan</em>
-          </h1>
-          <p class="text-ink-500 text-base sm:text-lg leading-relaxed">Kumpulan website hasil pengerjaan kami. Klik kartu untuk melihat hasilnya langsung.</p>
-        </div>
-        <div id="portfolioCount" class="text-sm font-semibold text-ink-400 num-tab"></div>
-      </div>
-      <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </div>
-  </section>
-</div>
-
 <!-- ================= FOOTER ================= -->
 <footer class="py-8 px-5 sm:px-8 bg-ink-950 text-ink-400 text-sm">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -368,7 +340,6 @@ tailwind.config = {
       <div class="w-8 h-8 bg-white text-ink-900 flex items-center justify-center font-display font-bold text-sm" id="footerBrand">M</div>
       <span class="font-display font-semibold text-white text-base tracking-tight" id="footerBrand2">MamanCode</span>
     </div>
-    <a href="#portofolio" class="text-xs font-medium text-ink-300 hover:text-white transition"><i class="fa-solid fa-folder-open mr-1.5"></i>Portofolio</a>
     <p class="text-xs text-ink-500">&copy; <span id="year"></span> <span id="footerBrand3">MamanCode</span>. Semua hak dilindungi.</p>
   </div>
 </footer>
@@ -421,11 +392,9 @@ tailwind.config = {
       <div class="flex flex-wrap gap-2 mb-6 border-b border-ink-200 pb-4">
         <button onclick="showTab('kontenTab')" id="tab-kontenTab" class="admin-tab active px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Konten</button>
         <button onclick="showTab('layananTab')" id="tab-layananTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Layanan</button>
-        <button onclick="showTab('portfolioTab')" id="tab-portfolioTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Portofolio</button>
         <button onclick="showTab('hargaTab')" id="tab-hargaTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Harga</button>
         <button onclick="showTab('payTab')" id="tab-payTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Pembayaran</button>
         <button onclick="showTab('waTab')" id="tab-waTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">WhatsApp</button>
-        <button onclick="showTab('pesananTab')" id="tab-pesananTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Pesanan</button>
       </div>
 
       <!-- TAB: Konten -->
@@ -550,46 +519,6 @@ tailwind.config = {
         <div id="layananList" class="space-y-2"></div>
       </div>
 
-      <!-- TAB: Portofolio -->
-      <div id="portfolioTab" class="admin-panel hidden bg-white p-6 sm:p-8 border border-ink-200">
-        <h2 class="font-display text-xl font-bold text-ink-900 mb-1">Portofolio</h2>
-        <p class="text-sm text-ink-500 mb-6">Tambah, edit, atau hapus website yang sudah dikerjakan. Tampil di halaman Portofolio.</p>
-
-        <div class="p-5 bg-ink-50 border border-ink-200 mb-6">
-          <h3 class="text-xs uppercase tracking-[0.18em] font-bold text-accent-700 mb-4" id="pfFormTitle">Tambah Website</h3>
-          <input type="hidden" id="pfEditId" />
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Nama Website *</label><input id="pfName" type="text" maxlength="80" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Toko Batik Nusantara" /></div>
-            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link Website</label><input id="pfUrl" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://contoh.com" /></div>
-            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Kategori</label><input id="pfCategory" type="text" maxlength="30" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Company Profile" /></div>
-            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Tahun</label><input id="pfYear" type="number" min="2000" max="2100" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="2026" /></div>
-            <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Deskripsi</label><textarea id="pfDesc" rows="3" maxlength="500" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Ceritakan singkat tentang website ini..."></textarea></div>
-            <div class="sm:col-span-2">
-              <label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Gambar / Screenshot (opsional)</label>
-              <div class="mt-2 grid sm:grid-cols-2 gap-3">
-                <input id="pfImageUrl" type="text" class="w-full px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Tempel link gambar (https://...)" />
-                <label class="flex items-center justify-center gap-2 px-4 py-2.5 border border-dashed border-ink-300 bg-white hover:border-ink-900 cursor-pointer text-sm font-medium text-ink-600 transition normal-case tracking-normal">
-                  <i class="fa-solid fa-upload text-xs"></i> <span>atau upload dari perangkat</span>
-                  <input id="pfImageFile" type="file" accept="image/*" class="hidden" />
-                </label>
-              </div>
-              <div id="pfPreviewWrap" class="hidden mt-3 flex items-center gap-3">
-                <img id="pfPreview" alt="Preview" class="h-20 w-32 object-cover object-top border border-ink-200 bg-ink-100" />
-                <button type="button" onclick="clearPortfolioImage()" class="px-3 py-1.5 text-xs font-semibold text-red-600 border border-red-200 hover:bg-red-50 transition">Hapus gambar</button>
-              </div>
-              <p class="text-xs text-ink-400 mt-2">Gambar dari perangkat otomatis dikecilkan agar ringan.</p>
-            </div>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <button onclick="savePortfolio()" class="px-5 py-2.5 font-semibold text-white bg-ink-900 hover:bg-ink-800 transition text-sm">Simpan</button>
-            <button onclick="resetPortfolioForm()" class="px-5 py-2.5 font-semibold text-ink-700 border border-ink-300 hover:bg-ink-100 transition text-sm">Reset</button>
-          </div>
-        </div>
-
-        <h3 class="text-xs uppercase tracking-[0.18em] font-bold text-ink-700 mb-3">Daftar Website</h3>
-        <div id="pfAdminList" class="space-y-2"><div class="text-ink-400 text-sm">Belum ada website.</div></div>
-      </div>
-
       <!-- TAB: Harga -->
       <div id="hargaTab" class="admin-panel hidden bg-white p-6 sm:p-8 border border-ink-200">
         <h2 class="font-display text-xl font-bold text-ink-900 mb-1">Pengaturan Harga</h2>
@@ -653,12 +582,6 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- TAB: Pesanan -->
-      <div id="pesananTab" class="admin-panel hidden bg-white p-6 sm:p-8 border border-ink-200">
-        <h2 class="font-display text-xl font-bold text-ink-900 mb-1">Daftar Pesanan</h2>
-        <p class="text-sm text-ink-500 mb-6">Pesan dari pelanggan yang konfirmasi pembayaran.</p>
-        <div id="pesananList" class="space-y-3"><div class="text-ink-400 text-sm">Belum ada pesanan.</div></div>
-      </div>
     </div>
   </div>
 </div>
@@ -735,7 +658,6 @@ const state = {
   payments: [],
   waNumber: "6281234567890",
   waMessage: "Halo Admin MamanCode, saya sudah melakukan pembayaran untuk pembuatan website dengan nominal Rp {nominal}. Berikut saya lampirkan bukti transfernya. Mohon dikonfirmasi ya, terima kasih!",
-  pesanan: [],
   konten: { ...DEFAULT_CONTENT },
   layanan: [...DEFAULT_LAYANAN]
 };
@@ -987,31 +909,6 @@ function renderPayList() {
   `).join('');
 }
 
-function renderPesanan() {
-  const list = document.getElementById('pesananList');
-  if (!list) return;
-  if (!state.pesanan || state.pesanan.length === 0) {
-    list.innerHTML = `<div class="text-ink-400 text-sm">Belum ada pesanan.</div>`;
-    return;
-  }
-  list.innerHTML = state.pesanan.map((p) => `
-    <div class="p-4 border border-ink-200 bg-white">
-      <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
-        <div>
-          <div class="font-semibold text-ink-900">${escapeHtml(p.metode || 'Pembayaran')}</div>
-          <div class="text-xs text-ink-400">${p.createdAt ? new Date(p.createdAt.seconds * 1000).toLocaleString('id-ID') : '-'}</div>
-        </div>
-        <div class="font-display font-bold text-ink-900 num-tab">Rp ${formatRupiah(p.nominal || 0)}</div>
-      </div>
-      <div class="text-sm text-ink-600 space-y-1">
-        ${p.nama ? `<div><b class="text-ink-900">Nama:</b> ${escapeHtml(p.nama)}</div>` : ''}
-        ${p.wa ? `<div><b class="text-ink-900">WA:</b> ${escapeHtml(p.wa)}</div>` : ''}
-        ${p.catatan ? `<div><b class="text-ink-900">Catatan:</b> ${escapeHtml(p.catatan)}</div>` : ''}
-      </div>
-    </div>
-  `).join('');
-}
-
 // ===================== KONFIRMASI WA =====================
 window.konfirmasiWA = function(metode = '') {
   const nominal = hitungFinal();
@@ -1019,11 +916,6 @@ window.konfirmasiWA = function(metode = '') {
   let msg = state.waMessage || 'Halo Admin, saya sudah bayar Rp {nominal}.';
   msg = msg.replace(/{nominal}/g, `Rp ${formatRupiah(nominal)}`);
   if (metode) msg += `\n\nMetode: ${metode}`;
-  const nama = prompt('Nama Anda (opsional):', '') || '';
-  const waUser = prompt('Nomor WhatsApp Anda (opsional):', '') || '';
-  const catatan = prompt('Catatan tambahan (opsional):', '') || '';
-  if (nama || waUser || catatan) msg += `\nNama: ${nama}\nWA: ${waUser}\nCatatan: ${catatan}`;
-  try { addDoc(collection(db, 'pesanan'), { nama, wa: waUser, catatan, metode, nominal, createdAt: serverTimestamp() }); } catch (e) { console.error(e); }
   window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
@@ -1062,7 +954,7 @@ window.openDashboard = function() {
   document.getElementById('adminDashboard').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
   showTab('kontenTab');
-  renderPayList(); renderPesanan(); renderHarga(); renderLayananList(); fillKontenForm(); renderPortfolioAdmin();
+  renderPayList(); renderHarga(); renderLayananList(); fillKontenForm();
 };
 
 // ===================== ADMIN TABS =====================
@@ -1284,232 +1176,11 @@ onSnapshot(collection(db, 'payments'), (snap) => {
   state.payments = snap.docs.map(d => ({ id: d.id, ...d.data() }));
   renderPaymentCards(); renderPayList();
 });
-onSnapshot(query(collection(db, 'pesanan'), orderBy('createdAt', 'desc')), (snap) => {
-  state.pesanan = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-  renderPesanan();
-});
-
-// ===================== PORTOFOLIO =====================
-state.portfolio = [];
-let pfImageData = '';
-const PF_BASE_TITLE = document.title;
-
-function pfNormUrl(u) {
-  u = (u || '').trim();
-  if (!u) return '';
-  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
-  try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : ''; } catch (e) { return ''; }
-}
-function pfHost(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return ''; } }
-function pfSafeImg(s) { return typeof s === 'string' && /^(data:image\/|https?:\/\/)/i.test(s) ? s : ''; }
-
-// ----- halaman publik -----
-function renderPortfolioPage() {
-  const grid = document.getElementById('portfolioGrid');
-  const count = document.getElementById('portfolioCount');
-  if (!grid) return;
-  const list = state.portfolio || [];
-  if (count) count.textContent = list.length ? `${list.length} website` : '';
-  if (!list.length) {
-    grid.innerHTML = `<div class="col-span-full p-14 border border-dashed border-ink-300 text-center bg-white">
-      <i class="fa-regular fa-folder-open text-3xl text-accent-500 mb-4"></i>
-      <div class="font-display text-xl font-bold text-ink-900 mb-1">Belum ada website</div>
-      <div class="text-sm text-ink-500">Portofolio akan segera ditambahkan.</div></div>`;
-    return;
-  }
-  grid.innerHTML = list.map((p) => {
-    const img = pfSafeImg(p.image);
-    const thumb = img
-      ? `<img src="${escapeHtml(img)}" alt="${escapeHtml(p.name || '')}" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" onerror="this.style.display='none'" />`
-      : '';
-    const initial = escapeHtml((p.name || '?').charAt(0).toUpperCase());
-    return `
-      <article class="bg-white border border-ink-200 hover:border-ink-900 transition group flex flex-col fade-in">
-        <div class="aspect-[16/10] bg-ink-100 relative overflow-hidden flex items-center justify-center">
-          <span class="font-display text-6xl font-bold text-ink-300 absolute">${initial}</span>
-          ${thumb ? `<div class="absolute inset-0 bg-ink-100">${thumb}</div>` : ''}
-          ${p.category ? `<span class="absolute top-3 left-3 bg-ink-900 text-white text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1">${escapeHtml(p.category)}</span>` : ''}
-          ${p.year ? `<span class="absolute top-3 right-3 bg-white text-ink-900 text-xs font-semibold px-2 py-1 num-tab">${escapeHtml(p.year)}</span>` : ''}
-        </div>
-        <div class="p-6 flex flex-col flex-1">
-          <h3 class="font-display text-xl font-bold text-ink-900 break-words">${escapeHtml(p.name || '')}</h3>
-          ${p.url ? `<div class="text-xs text-ink-400 mt-1 break-all">${escapeHtml(pfHost(p.url))}</div>` : ''}
-          ${p.desc ? `<p class="text-sm text-ink-500 leading-relaxed mt-3 break-words line-clamp-3">${escapeHtml(p.desc)}</p>` : ''}
-          <div class="mt-auto pt-5">
-            ${p.url
-              ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-ink-900 hover:text-accent-700 transition">Kunjungi website <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>`
-              : `<span class="text-xs text-ink-400">Tanpa link</span>`}
-          </div>
-        </div>
-      </article>`;
-  }).join('');
-}
-
-// ----- daftar di dashboard admin -----
-function renderPortfolioAdmin() {
-  const list = document.getElementById('pfAdminList');
-  if (!list) return;
-  if (!state.portfolio || state.portfolio.length === 0) {
-    list.innerHTML = `<div class="text-ink-400 text-sm">Belum ada website.</div>`;
-    return;
-  }
-  list.innerHTML = state.portfolio.map((p, i) => {
-    const img = pfSafeImg(p.image);
-    return `
-    <div class="flex flex-wrap items-center justify-between gap-3 p-4 border border-ink-200 bg-white">
-      <div class="flex items-center gap-3 min-w-0 flex-1">
-        <div class="w-14 h-10 bg-ink-100 text-ink-400 flex items-center justify-center shrink-0 overflow-hidden">
-          ${img ? `<img src="${escapeHtml(img)}" alt="" class="w-full h-full object-cover object-top" onerror="this.style.display='none'" />` : `<i class="fa-solid fa-globe"></i>`}
-        </div>
-        <div class="min-w-0">
-          <div class="font-semibold text-sm text-ink-900 truncate">${escapeHtml(p.name || '')}</div>
-          <div class="text-xs text-ink-500 truncate">${escapeHtml([p.category, p.year, p.url ? pfHost(p.url) : ''].filter(Boolean).join(' • ') || '-')}</div>
-        </div>
-      </div>
-      <div class="flex gap-2 shrink-0">
-        <button onclick="editPortfolio(${i})" class="px-3 py-1.5 text-xs font-semibold text-ink-700 border border-ink-200 hover:bg-ink-50 transition"><i class="fa-solid fa-pen"></i></button>
-        <button onclick="hapusPortfolio(${i})" class="px-3 py-1.5 text-xs font-semibold text-red-600 border border-red-200 hover:bg-red-50 transition"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-// ----- form tambah / edit -----
-function pfUpdatePreview() {
-  const src = pfImageData || pfNormUrl(document.getElementById('pfImageUrl').value);
-  const wrap = document.getElementById('pfPreviewWrap');
-  const img = document.getElementById('pfPreview');
-  if (src) { img.src = src; wrap.classList.remove('hidden'); }
-  else { img.removeAttribute('src'); wrap.classList.add('hidden'); }
-}
-window.clearPortfolioImage = function() {
-  pfImageData = '';
-  document.getElementById('pfImageUrl').value = '';
-  document.getElementById('pfImageFile').value = '';
-  pfUpdatePreview();
-};
-// kecilkan gambar supaya muat di Firestore (batas 1 MB per dokumen)
-function pfShrink(file, cb) {
-  const reader = new FileReader();
-  reader.onload = () => {
-    const img = new Image();
-    img.onload = () => {
-      const max = 800;
-      let w = img.width, h = img.height;
-      if (w > max) { h = Math.round(h * max / w); w = max; }
-      const c = document.createElement('canvas'); c.width = w; c.height = h;
-      const ctx = c.getContext('2d');
-      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h);
-      ctx.drawImage(img, 0, 0, w, h);
-      cb(c.toDataURL('image/jpeg', 0.7));
-    };
-    img.onerror = () => showToast('File gambar tidak valid', 'bg-red-600');
-    img.src = reader.result;
-  };
-  reader.readAsDataURL(file);
-}
-document.getElementById('pfImageFile').addEventListener('change', function() {
-  const f = this.files[0];
-  if (!f) return;
-  if (!/^image\//.test(f.type)) { showToast('Pilih file gambar', 'bg-red-600'); return; }
-  pfShrink(f, (d) => {
-    if (d.length > 700000) { showToast('Gambar terlalu besar, pilih yang lebih kecil', 'bg-red-600'); return; }
-    pfImageData = d;
-    document.getElementById('pfImageUrl').value = '';
-    pfUpdatePreview();
-  });
-});
-document.getElementById('pfImageUrl').addEventListener('input', () => { pfImageData = ''; pfUpdatePreview(); });
-
-window.resetPortfolioForm = function() {
-  ['pfEditId', 'pfName', 'pfUrl', 'pfCategory', 'pfYear', 'pfDesc', 'pfImageUrl'].forEach(id => { document.getElementById(id).value = ''; });
-  document.getElementById('pfImageFile').value = '';
-  pfImageData = '';
-  pfUpdatePreview();
-  document.getElementById('pfFormTitle').textContent = 'Tambah Website';
-};
-window.savePortfolio = async function() {
-  const editId = document.getElementById('pfEditId').value;
-  const name = document.getElementById('pfName').value.trim();
-  if (!name) { showToast('Nama website wajib diisi', 'bg-red-600'); return; }
-  const rawUrl = document.getElementById('pfUrl').value.trim();
-  const url = pfNormUrl(rawUrl);
-  if (rawUrl && !url) { showToast('Link website tidak valid', 'bg-red-600'); return; }
-  const rawImg = document.getElementById('pfImageUrl').value.trim();
-  const imgUrl = pfNormUrl(rawImg);
-  if (!pfImageData && rawImg && !imgUrl) { showToast('Link gambar tidak valid', 'bg-red-600'); return; }
-  const data = {
-    name, url,
-    category: document.getElementById('pfCategory').value.trim(),
-    year: document.getElementById('pfYear').value.trim(),
-    desc: document.getElementById('pfDesc').value.trim(),
-    image: pfImageData || imgUrl
-  };
-  try {
-    if (editId) { await updateDoc(doc(db, 'portfolio', editId), data); showToast('Website diupdate', 'bg-ink-900'); }
-    else { await addDoc(collection(db, 'portfolio'), { ...data, createdAt: serverTimestamp() }); showToast('Website ditambahkan', 'bg-ink-900'); }
-    resetPortfolioForm();
-  } catch (e) { console.error(e); showToast('Gagal menyimpan (cek aturan Firestore)', 'bg-red-600'); }
-};
-window.editPortfolio = function(index) {
-  const p = state.portfolio[index];
-  if (!p) return;
-  document.getElementById('pfEditId').value = p.id;
-  document.getElementById('pfName').value = p.name || '';
-  document.getElementById('pfUrl').value = p.url || '';
-  document.getElementById('pfCategory').value = p.category || '';
-  document.getElementById('pfYear').value = p.year || '';
-  document.getElementById('pfDesc').value = p.desc || '';
-  document.getElementById('pfImageFile').value = '';
-  const img = pfSafeImg(p.image);
-  if (img.startsWith('data:')) { pfImageData = img; document.getElementById('pfImageUrl').value = ''; }
-  else { pfImageData = ''; document.getElementById('pfImageUrl').value = img; }
-  pfUpdatePreview();
-  document.getElementById('pfFormTitle').textContent = 'Edit Website';
-  document.getElementById('portfolioTab').scrollIntoView({ behavior: 'smooth' });
-};
-window.hapusPortfolio = async function(index) {
-  const p = state.portfolio[index];
-  if (!p) return;
-  if (!confirm(`Hapus website "${p.name}" dari portofolio?`)) return;
-  try { await deleteDoc(doc(db, 'portfolio', p.id)); showToast('Website dihapus', 'bg-red-600'); }
-  catch (e) { console.error(e); showToast('Gagal menghapus', 'bg-red-600'); }
-};
-
-// ----- pindah halaman (beranda <-> portofolio) -----
-function showPortfolioPage(on) {
-  const page = document.getElementById('portfolioPage');
-  const home = document.getElementById('homePage');
-  if (on === !page.classList.contains('hidden')) return;
-  page.classList.toggle('hidden', !on);
-  home.classList.toggle('hidden', on);
-  document.title = on ? 'Portofolio — ' + (state.konten?.brandName || 'MamanCode') : PF_BASE_TITLE;
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}
-function routePortfolio() {
-  const raw = window.location.hash.replace('#', '');
-  const h = raw.toLowerCase();
-  if (h === 'portofolio') { showPortfolioPage(true); return; }
-  if (h === 'admin') return;
-  const page = document.getElementById('portfolioPage');
-  if (!page.classList.contains('hidden')) {
-    showPortfolioPage(false);
-    const t = raw ? document.getElementById(raw) : null;
-    requestAnimationFrame(() => { if (t) t.scrollIntoView(); else window.scrollTo({ top: 0, behavior: 'instant' }); });
-  }
-}
-window.addEventListener('hashchange', routePortfolio);
-
-onSnapshot(query(collection(db, 'portfolio'), orderBy('createdAt', 'desc')), (snap) => {
-  state.portfolio = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-  renderPortfolioPage(); renderPortfolioAdmin();
-});
 
 // ===================== INIT =====================
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('adminEmail').placeholder = ADMIN_CREDENTIALS.email;
 renderKonten(); renderLayananGrid(); renderHarga();
-renderPortfolioPage(); routePortfolio();
 </script>
 
 </body>
