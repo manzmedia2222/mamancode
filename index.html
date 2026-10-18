@@ -588,7 +588,7 @@ tailwind.config = {
                 <option value="other">Lainnya</option>
               </select>
             </div>
-            <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">URL Gambar QRIS / Logo (opsional)</label><input id="payImage" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://i.ibb.co.com/xxxx/qris.png" /><p class="text-xs text-ink-400 mt-1">Upload gambar ke imgbb.com lalu paste link di sini</p></div>
+            <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">URL Gambar QRIS / Logo (opsional)</label><input id="payImage" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://i.ibb.co.com/xxxx/qris.png" /><p class="text-xs text-ink-400 mt-1">Upload ke imgbb.com lalu paste link atau kode embed (HTML) di sini, link gambar otomatis diambil</p></div>
             <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Catatan (opsional)</label><input id="payNote" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Kirim bukti transfer ke WA admin" /></div>
           </div>
           <div class="mt-4 flex flex-wrap gap-3">
@@ -611,7 +611,7 @@ tailwind.config = {
             <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Nama website</label><input id="webNama" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Kopi Senja" /></div>
             <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Kategori</label><input id="webKategori" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Company Profile" /></div>
             <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link website</label><input id="webUrl" type="url" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://contoh.com" /></div>
-            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link gambar (imgbb)</label><input id="webGambar" type="url" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://i.ibb.co/.../screenshot.jpg" /></div>
+            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link / kode gambar (imgbb)</label><input id="webGambar" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Paste link atau kode embed imgbb" /><p class="text-xs text-ink-400 mt-1">Boleh paste kode &lt;a href...&gt;&lt;img src...&gt;, link otomatis diambil</p></div>
             <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Deskripsi singkat</label><textarea id="webDeskripsi" rows="2" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm"></textarea></div>
           </div>
           <div class="mt-4 flex flex-wrap gap-3">
@@ -1118,6 +1118,31 @@ function updateHargaPreview() {
 document.getElementById('inputHargaNormal').addEventListener('input', updateHargaPreview);
 document.getElementById('inputDiskon').addEventListener('input', updateHargaPreview);
 
+// ===================== AUTO-AMBIL LINK GAMBAR (imgbb) =====================
+// Bisa paste: link langsung, kode embed HTML (<a><img src="..."></a>), BBCode [img]...[/img], atau Markdown ![](...)
+function extractImageUrl(raw) {
+  const t = (raw || '').trim();
+  if (!t) return '';
+  let m = t.match(/<img[^>]+src\s*=\s*["']([^"']+)["']/i);          // HTML embed
+  if (!m) m = t.match(/\[img\]\s*(https?:\/\/[^\s\[\]]+)\s*\[\/img\]/i); // BBCode
+  if (!m) m = t.match(/!\[[^\]]*\]\(\s*(https?:\/\/[^\s)]+)\s*\)/);    // Markdown
+  if (!m) m = t.match(/https?:\/\/[^\s"'<>\]\[]+/i);                    // URL biasa
+  const url = m ? (m[1] || m[0]) : '';
+  return safeUrl(url.replace(/&amp;/g, '&'));
+}
+function bindImageAutoExtract(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const run = () => {
+    const raw = el.value.trim();
+    if (!raw || /^https?:\/\/\S+$/i.test(raw)) return;   // sudah link bersih
+    const url = extractImageUrl(raw);
+    if (url) { el.value = url; showToast('Link gambar diambil otomatis', 'bg-ink-900'); }
+  };
+  el.addEventListener('paste', () => setTimeout(run, 0));
+  el.addEventListener('blur', run);
+}
+
 // ===================== PAYMENT =====================
 window.savePayment = async function() {
   const editId = document.getElementById('payEditId').value;
@@ -1125,7 +1150,7 @@ window.savePayment = async function() {
   const number = document.getElementById('payNumber').value.trim();
   const holder = document.getElementById('payHolder').value.trim();
   const type = document.getElementById('payType').value;
-  const image = document.getElementById('payImage').value.trim();
+  const image = extractImageUrl(document.getElementById('payImage').value);
   const note = document.getElementById('payNote').value.trim();
   if (!name) { showToast('Nama metode wajib diisi', 'bg-red-600'); return; }
   const data = { name, number, holder, type, image, note };
@@ -1223,7 +1248,7 @@ async function persistWebsites(msg, color) {
 }
 window.saveWebsite = async function() {
   const v = id => document.getElementById(id).value.trim();
-  const item = { nama: v('webNama'), kategori: v('webKategori'), url: v('webUrl'), gambar: v('webGambar'), deskripsi: v('webDeskripsi') };
+  const item = { nama: v('webNama'), kategori: v('webKategori'), url: v('webUrl'), gambar: extractImageUrl(v('webGambar')), deskripsi: v('webDeskripsi') };
   if (!item.nama || !safeUrl(item.url)) { showToast('Isi nama dan link website (diawali https://)', 'bg-red-600'); return; }
   const arr = [...(state.websites || [])]; const idx = v('webEditIndex');
   if (idx !== '') arr[Number(idx)] = item; else arr.push(item);
@@ -1299,6 +1324,7 @@ onSnapshot(collection(db, 'payments'), (snap) => {
 
 // ===================== INIT =====================
 document.getElementById('year').textContent = new Date().getFullYear();
+bindImageAutoExtract('webGambar'); bindImageAutoExtract('payImage');
 document.getElementById('adminEmail').placeholder = ADMIN_CREDENTIALS.email;
 renderKonten(); renderLayananGrid(); renderHarga(); renderWebsitePage();
 </script>
