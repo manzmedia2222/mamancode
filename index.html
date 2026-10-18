@@ -128,8 +128,10 @@ tailwind.config = {
         <a href="#layanan" class="nav-link hover:text-ink-900 transition">Layanan</a>
         <a href="#harga" class="nav-link hover:text-ink-900 transition">Harga</a>
         <a href="#pembayaran" class="nav-link hover:text-ink-900 transition">Pembayaran</a>
+        <a href="#website" class="nav-link hover:text-ink-900 transition">Website Kami</a>
         <a href="#kontak" class="nav-link hover:text-ink-900 transition">Kontak</a>
       </div>
+      <a href="#website" class="lg:hidden ml-auto mr-3 text-sm font-semibold text-ink-700">Website Kami</a>
       <a href="#harga" id="navCta" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition border border-ink-900">
         <span id="navCtaText" class="hidden sm:inline">Mulai Proyek</span>
         <span class="sm:hidden">Mulai</span>
@@ -350,6 +352,16 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ================= HALAMAN: WEBSITE YANG SUDAH DIBUAT ================= -->
+<section id="websitePage" class="hidden min-h-screen pt-28 sm:pt-36 pb-20 px-5 sm:px-8 bg-ink-50">
+  <div class="max-w-7xl mx-auto">
+    <a href="#home" class="inline-flex items-center gap-2 text-sm font-semibold text-ink-600 hover:text-ink-900 mb-8"><i class="fa-solid fa-arrow-left text-[10px]"></i> Kembali ke beranda</a>
+    <h1 class="font-display text-3xl sm:text-5xl font-bold text-ink-900 tracking-tight">Website yang sudah kami buat</h1>
+    <p class="text-ink-500 mt-4 max-w-xl">Beberapa website klien yang sudah selesai dan online. Klik untuk melihat langsung.</p>
+    <div id="websiteGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"></div>
+  </div>
+</section>
+
 <!-- ================= FOOTER ================= -->
 <footer class="py-8 px-5 sm:px-8 bg-ink-950 text-ink-400 text-sm">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -411,6 +423,7 @@ tailwind.config = {
         <button onclick="showTab('layananTab')" id="tab-layananTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Layanan</button>
         <button onclick="showTab('hargaTab')" id="tab-hargaTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Harga</button>
         <button onclick="showTab('payTab')" id="tab-payTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Pembayaran</button>
+        <button onclick="showTab('websiteTab')" id="tab-websiteTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">Website</button>
         <button onclick="showTab('waTab')" id="tab-waTab" class="admin-tab px-4 py-2 text-xs sm:text-sm font-semibold border border-ink-200 bg-white text-ink-700 hover:border-ink-900 transition">WhatsApp</button>
       </div>
 
@@ -588,6 +601,28 @@ tailwind.config = {
       </div>
 
       <!-- TAB: WA -->
+      <div id="websiteTab" class="admin-panel hidden bg-white p-6 sm:p-8 border border-ink-200">
+        <h2 class="font-display text-xl font-bold text-ink-900 mb-1">Website yang Sudah Dibuat</h2>
+        <p class="text-sm text-ink-500 mb-6">Tambah, edit, atau hapus website yang tampil di halaman Website Kami.</p>
+        <div class="p-5 bg-ink-50 border border-ink-200 mb-6">
+          <h3 class="text-xs uppercase tracking-[0.18em] font-bold text-accent-700 mb-4" id="webFormTitle">Tambah Website</h3>
+          <input type="hidden" id="webEditIndex" />
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Nama website</label><input id="webNama" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Kopi Senja" /></div>
+            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Kategori</label><input id="webKategori" type="text" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="Company Profile" /></div>
+            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link website</label><input id="webUrl" type="url" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://contoh.com" /></div>
+            <div><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Link gambar (imgbb)</label><input id="webGambar" type="url" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm" placeholder="https://i.ibb.co/.../screenshot.jpg" /></div>
+            <div class="sm:col-span-2"><label class="text-xs uppercase tracking-wider font-semibold text-ink-600">Deskripsi singkat</label><textarea id="webDeskripsi" rows="2" class="w-full mt-2 px-4 py-2.5 border border-ink-200 bg-white focus:outline-none focus:border-ink-900 transition text-sm"></textarea></div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <button onclick="saveWebsite()" class="px-5 py-2.5 font-semibold text-white bg-ink-900 hover:bg-ink-800 transition text-sm">Simpan</button>
+            <button onclick="resetWebsiteForm()" class="px-5 py-2.5 font-semibold text-ink-700 border border-ink-300 hover:bg-ink-100 transition text-sm">Reset</button>
+          </div>
+        </div>
+        <h3 class="text-xs uppercase tracking-[0.18em] font-bold text-ink-700 mb-3">Daftar Website</h3>
+        <div id="websiteList" class="space-y-2"></div>
+      </div>
+
       <div id="waTab" class="admin-panel hidden bg-white p-6 sm:p-8 border border-ink-200">
         <h2 class="font-display text-xl font-bold text-ink-900 mb-1">Pengaturan WhatsApp</h2>
         <p class="text-sm text-ink-500 mb-6">Nomor WA tujuan konfirmasi & kontak.</p>
@@ -676,7 +711,8 @@ const state = {
   waNumber: "6281234567890",
   waMessage: "Halo Admin MamanCode, saya sudah melakukan pembayaran untuk pembuatan website dengan nominal Rp {nominal}. Berikut saya lampirkan bukti transfernya. Mohon dikonfirmasi ya, terima kasih!",
   konten: { ...DEFAULT_CONTENT },
-  layanan: [...DEFAULT_LAYANAN]
+  layanan: [...DEFAULT_LAYANAN],
+  websites: []
 };
 window.state = state;
 
@@ -1153,10 +1189,73 @@ window.showToast = function(text, color = 'bg-ink-900') {
   setTimeout(() => t.classList.add('hidden'), 2500);
 };
 
+// ===================== WEBSITE YANG SUDAH DIBUAT =====================
+function safeUrl(u) { try { const x = new URL(u); return ['http:','https:'].includes(x.protocol) ? x.href : ''; } catch { return ''; } }
+function renderWebsitePage() {
+  const g = document.getElementById('websiteGrid'); const items = state.websites || [];
+  if (!items.length) { g.innerHTML = '<div class="col-span-full p-10 border border-dashed border-ink-300 text-center text-sm text-ink-400 bg-white">Belum ada website yang ditampilkan.</div>'; return; }
+  g.innerHTML = items.map(w => {
+    const img = escapeHtml(safeUrl(w.gambar)), url = escapeHtml(safeUrl(w.url));
+    return `<article class="group bg-white border border-ink-200 flex flex-col">
+      <div class="aspect-video bg-ink-100 overflow-hidden">${img ? `<img src="${img}" alt="${escapeHtml(w.nama)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">` : '<div class="w-full h-full flex items-center justify-center text-ink-300 text-3xl"><i class="fa-solid fa-globe"></i></div>'}</div>
+      <div class="p-5 flex-1 flex flex-col">
+        ${w.kategori ? `<div class="text-xs font-semibold text-accent-700 mb-1">${escapeHtml(w.kategori)}</div>` : ''}
+        <h3 class="font-display text-lg font-bold text-ink-900">${escapeHtml(w.nama)}</h3>
+        <p class="text-sm text-ink-500 mt-2 flex-1">${escapeHtml(w.deskripsi || '')}</p>
+        ${url ? `<a href="${url}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink-900 hover:text-accent-700">Kunjungi website <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>` : ''}
+      </div></article>`;
+  }).join('');
+}
+function renderWebsiteList() {
+  const list = document.getElementById('websiteList'); const items = state.websites || [];
+  if (!items.length) { list.innerHTML = '<div class="text-ink-400 text-sm">Belum ada website.</div>'; return; }
+  list.innerHTML = items.map((w, i) => `<div class="flex items-center justify-between gap-3 p-3 border border-ink-200">
+    <div class="min-w-0"><div class="font-semibold text-ink-900 text-sm truncate">${escapeHtml(w.nama)}</div><div class="text-xs text-ink-500 truncate">${escapeHtml(w.url)}</div></div>
+    <div class="flex gap-2 shrink-0">
+      <button onclick="editWebsite(${i})" class="px-3 py-1.5 text-xs font-semibold text-ink-700 border border-ink-200 hover:bg-ink-50 transition"><i class="fa-solid fa-pen"></i></button>
+      <button onclick="hapusWebsite(${i})" class="px-3 py-1.5 text-xs font-semibold text-red-600 border border-red-200 hover:bg-red-50 transition"><i class="fa-solid fa-trash"></i></button>
+    </div></div>`).join('');
+}
+async function persistWebsites(msg, color) {
+  try { await setDoc(doc(db, 'settings', 'websites'), { items: state.websites }, { merge: true }); showToast(msg, color); }
+  catch (e) { showToast('Gagal menyimpan: ' + e.message, 'bg-red-600'); }
+  renderWebsitePage(); renderWebsiteList();
+}
+window.saveWebsite = async function() {
+  const v = id => document.getElementById(id).value.trim();
+  const item = { nama: v('webNama'), kategori: v('webKategori'), url: v('webUrl'), gambar: v('webGambar'), deskripsi: v('webDeskripsi') };
+  if (!item.nama || !safeUrl(item.url)) { showToast('Isi nama dan link website (diawali https://)', 'bg-red-600'); return; }
+  const arr = [...(state.websites || [])]; const idx = v('webEditIndex');
+  if (idx !== '') arr[Number(idx)] = item; else arr.push(item);
+  state.websites = arr; resetWebsiteForm(); await persistWebsites('Website disimpan', 'bg-ink-900');
+};
+window.resetWebsiteForm = function() {
+  ['webEditIndex','webNama','webKategori','webUrl','webGambar','webDeskripsi'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('webFormTitle').textContent = 'Tambah Website';
+};
+window.editWebsite = function(i) {
+  const w = state.websites[i]; if (!w) return;
+  document.getElementById('webEditIndex').value = i;
+  document.getElementById('webNama').value = w.nama || ''; document.getElementById('webKategori').value = w.kategori || '';
+  document.getElementById('webUrl').value = w.url || ''; document.getElementById('webGambar').value = w.gambar || '';
+  document.getElementById('webDeskripsi').value = w.deskripsi || '';
+  document.getElementById('webFormTitle').textContent = 'Edit Website';
+  document.getElementById('websiteTab').scrollIntoView({ behavior: 'smooth' });
+};
+window.hapusWebsite = async function(i) {
+  const w = state.websites[i]; if (!w || !confirm(`Hapus website "${w.nama}"?`)) return;
+  state.websites = state.websites.filter((_, k) => k !== i); await persistWebsites('Website dihapus', 'bg-red-600');
+};
+
 // ===================== ROUTING =====================
 function checkHash() {
   const hash = window.location.hash.replace('#', '').toLowerCase();
   const isLoggedIn = sessionStorage.getItem('mamancode_admin') === '1';
+  const onWeb = hash === 'website';
+  document.getElementById('websitePage').classList.toggle('hidden', !onWeb);
+  document.querySelectorAll('section:not(#websitePage)').forEach(sec => sec.classList.toggle('hidden', onWeb));
+  if (onWeb) window.scrollTo(0, 0);
+  else if (hash && hash !== 'admin') { const el = document.getElementById(hash); if (el) setTimeout(() => el.scrollIntoView(), 0); }
   if (hash === 'admin') { if (isLoggedIn) openDashboard(); else openAdminLogin(); }
 }
 window.addEventListener('hashchange', checkHash);
@@ -1189,6 +1288,10 @@ onSnapshot(doc(db, 'settings', 'layanan'), (snap) => {
   else { setDoc(doc(db, 'settings', 'layanan'), { items: DEFAULT_LAYANAN }, { merge: true }); state.layanan = [...DEFAULT_LAYANAN]; }
   renderLayananGrid(); renderLayananList();
 });
+onSnapshot(doc(db, 'settings', 'websites'), (snap) => {
+  state.websites = (snap.exists() && snap.data().items) ? snap.data().items : [];
+  renderWebsitePage(); renderWebsiteList();
+});
 onSnapshot(collection(db, 'payments'), (snap) => {
   state.payments = snap.docs.map(d => ({ id: d.id, ...d.data() }));
   renderPaymentCards(); renderPayList();
@@ -1197,7 +1300,7 @@ onSnapshot(collection(db, 'payments'), (snap) => {
 // ===================== INIT =====================
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('adminEmail').placeholder = ADMIN_CREDENTIALS.email;
-renderKonten(); renderLayananGrid(); renderHarga();
+renderKonten(); renderLayananGrid(); renderHarga(); renderWebsitePage();
 </script>
 
 </body>
