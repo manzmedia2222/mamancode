@@ -78,6 +78,23 @@ tailwind.config = {
   @media (max-width: 640px) {
     h1.display { font-size: 2rem !important; line-height: 1.1 !important; }
   }
+
+  /* ===== Background gambar per section ===== */
+  .sec-bg { position: relative; isolation: isolate; overflow: hidden; }
+  .sec-bg::before {
+    content: ''; position: absolute; inset: 0; z-index: -2;
+    background-image: var(--bg-img);
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .sec-bg::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: rgba(255,255,255,var(--ov, .7));
+  }
+  @media (max-width: 1023px) {
+    .sec-bg::before { background-position: center top; }
+    .sec-bg::after  { background: rgba(255,255,255,var(--ov-m, .85)); }
+  }
+  img, svg, video { max-width: 100%; height: auto; }
   /* subtle underline hover */
   .nav-link { position: relative; }
   .nav-link::after {
@@ -123,7 +140,7 @@ tailwind.config = {
 </nav>
 
 <!-- ================= HERO ================= -->
-<section id="home" class="pt-28 sm:pt-36 pb-20 sm:pb-28 px-5 sm:px-8 bg-white border-b border-ink-100">
+<section id="home" class="pt-28 sm:pt-36 pb-20 sm:pb-28 px-5 sm:px-8 bg-white border-b border-ink-100 sec-bg" style="--bg-img:url('https://i.ibb.co.com/HDxKPx1z/03f35db5-7a5d-48dd-a056-0f1560a20a2e.png'); --ov:.62; --ov-m:.85;">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
       <div class="lg:col-span-7">
@@ -184,7 +201,7 @@ tailwind.config = {
 </section>
 
 <!-- ================= LAYANAN ================= -->
-<section id="layanan" class="py-20 sm:py-28 px-5 sm:px-8 bg-ink-50">
+<section id="layanan" class="py-20 sm:py-28 px-5 sm:px-8 bg-ink-50 sec-bg" style="--bg-img:url('https://i.ibb.co.com/35SVbYZ7/aea6a6ab-3e07-4c2e-9022-e44f2ac5e141.png'); --ov:.72; --ov-m:.88;">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 mb-14 items-end">
       <div class="lg:col-span-7">
@@ -202,7 +219,7 @@ tailwind.config = {
 </section>
 
 <!-- ================= HARGA ================= -->
-<section id="harga" class="py-20 sm:py-28 px-5 sm:px-8 bg-white border-y border-ink-100">
+<section id="harga" class="py-20 sm:py-28 px-5 sm:px-8 bg-white border-y border-ink-100 sec-bg" style="--bg-img:url('https://i.ibb.co.com/Lqgrrtm/8e1b4680-5d53-40e5-8d4d-bea33e45ff2c.png'); --ov:.70; --ov-m:.86;">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 mb-14 items-end">
       <div class="lg:col-span-7">
@@ -256,7 +273,7 @@ tailwind.config = {
 </section>
 
 <!-- ================= PEMBAYARAN ================= -->
-<section id="pembayaran" class="py-20 sm:py-28 px-5 sm:px-8 bg-ink-50">
+<section id="pembayaran" class="py-20 sm:py-28 px-5 sm:px-8 bg-ink-50 sec-bg" style="--bg-img:url('https://i.ibb.co.com/6JXr1KFW/b1b13bef-666c-4ae3-aed4-bdd1e9493774.png'); --ov:.72; --ov-m:.88;">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 mb-14 items-end">
       <div class="lg:col-span-7">
