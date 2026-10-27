@@ -116,7 +116,7 @@ tailwind.config = {
 <nav class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-ink-100">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="flex justify-between items-center h-20">
-      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+      <a href="/" data-scroll="home" class="flex items-center gap-3 shrink-0 group">
         <div class="w-10 h-10 bg-ink-900 text-white flex items-center justify-center font-display font-bold text-lg tracking-tight" id="brandLogo">M</div>
         <div class="leading-tight">
           <div class="font-display font-bold text-ink-900 text-lg tracking-tight" id="brandName">MamanCode</div>
@@ -124,15 +124,15 @@ tailwind.config = {
         </div>
       </a>
       <div class="hidden lg:flex items-center gap-9 text-sm font-medium text-ink-600">
-        <a href="#home" class="nav-link hover:text-ink-900 transition">Beranda</a>
-        <a href="#layanan" class="nav-link hover:text-ink-900 transition">Layanan</a>
-        <a href="#harga" class="nav-link hover:text-ink-900 transition">Harga</a>
-        <a href="#pembayaran" class="nav-link hover:text-ink-900 transition">Pembayaran</a>
-        <a href="#website" class="nav-link hover:text-ink-900 transition">Website Kami</a>
-        <a href="#kontak" class="nav-link hover:text-ink-900 transition">Kontak</a>
+        <a href="/" data-scroll="home" class="nav-link hover:text-ink-900 transition">Beranda</a>
+        <a href="/" data-scroll="layanan" class="nav-link hover:text-ink-900 transition">Layanan</a>
+        <a href="/" data-scroll="harga" class="nav-link hover:text-ink-900 transition">Harga</a>
+        <a href="/" data-scroll="pembayaran" class="nav-link hover:text-ink-900 transition">Pembayaran</a>
+        <a href="/website" class="nav-link hover:text-ink-900 transition">Website Kami</a>
+        <a href="/" data-scroll="kontak" class="nav-link hover:text-ink-900 transition">Kontak</a>
       </div>
-      <a href="#website" class="lg:hidden ml-auto mr-3 text-sm font-semibold text-ink-700">Website Kami</a>
-      <a href="#harga" id="navCta" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition border border-ink-900">
+      <a href="/website" class="lg:hidden ml-auto mr-3 text-sm font-semibold text-ink-700">Website Kami</a>
+      <a href="/" data-scroll="harga" id="navCta" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition border border-ink-900">
         <span id="navCtaText" class="hidden sm:inline">Mulai Proyek</span>
         <span class="sm:hidden">Mulai</span>
         <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -157,11 +157,11 @@ tailwind.config = {
           MamanCode merancang dan membangun website modern, responsif, dan siap pakai untuk UMKM, bisnis, dan personal branding — mulai dari Rp 100.000.
         </p>
         <div class="flex flex-wrap items-center gap-3 mb-12">
-          <a href="#harga" id="heroBtn1" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition">
+          <a href="/" data-scroll="harga" id="heroBtn1" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 transition">
             <span id="heroBtn1Text">Lihat Paket Harga</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
-          <a href="#pembayaran" id="heroBtn2" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-ink-900 bg-white border border-ink-200 hover:border-ink-900 transition">
+          <a href="/" data-scroll="pembayaran" id="heroBtn2" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-ink-900 bg-white border border-ink-200 hover:border-ink-900 transition">
             <span id="heroBtn2Text">Cara Pembayaran</span>
           </a>
         </div>
@@ -193,7 +193,7 @@ tailwind.config = {
 
           <ul id="fiturListPreview" class="space-y-3 mb-8 pt-6 border-t border-ink-700"></ul>
 
-          <a href="#pembayaran" class="inline-flex w-full items-center justify-center gap-2 py-3.5 font-semibold text-ink-900 bg-accent-400 hover:bg-accent-300 transition text-sm">
+          <a href="/" data-scroll="pembayaran" class="inline-flex w-full items-center justify-center gap-2 py-3.5 font-semibold text-ink-900 bg-accent-400 hover:bg-accent-300 transition text-sm">
             Pesan Sekarang <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
         </div>
@@ -255,7 +255,7 @@ tailwind.config = {
 
         <ul id="fiturList" class="space-y-3.5 mb-10 max-w-md"></ul>
 
-        <button onclick="document.getElementById('pembayaran').scrollIntoView({behavior:'smooth'})" class="inline-flex items-center gap-2 px-6 py-3.5 font-semibold text-white bg-ink-900 hover:bg-ink-800 transition text-sm">
+        <button data-scroll="pembayaran" class="inline-flex items-center gap-2 px-6 py-3.5 font-semibold text-white bg-ink-900 hover:bg-ink-800 transition text-sm">
           Lanjut ke Pembayaran <i class="fa-solid fa-arrow-down text-xs"></i>
         </button>
       </div>
@@ -355,7 +355,7 @@ tailwind.config = {
 <!-- ================= HALAMAN: WEBSITE YANG SUDAH DIBUAT ================= -->
 <section id="websitePage" class="hidden min-h-screen pt-28 sm:pt-36 pb-20 px-5 sm:px-8 bg-ink-50">
   <div class="max-w-7xl mx-auto">
-    <a href="#home" class="inline-flex items-center gap-2 text-sm font-semibold text-ink-600 hover:text-ink-900 mb-8"><i class="fa-solid fa-arrow-left text-[10px]"></i> Kembali ke beranda</a>
+    <a href="/" data-scroll="home" class="inline-flex items-center gap-2 text-sm font-semibold text-ink-600 hover:text-ink-900 mb-8"><i class="fa-solid fa-arrow-left text-[10px]"></i> Kembali ke beranda</a>
     <h1 class="font-display text-3xl sm:text-5xl font-bold text-ink-900 tracking-tight">Website yang sudah kami buat</h1>
     <p class="text-ink-500 mt-4 max-w-xl">Beberapa website klien yang sudah selesai dan online. Klik untuk melihat langsung.</p>
     <div id="websiteGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"></div>
@@ -1272,7 +1272,7 @@ window.hapusWebsite = async function(i) {
   state.websites = state.websites.filter((_, k) => k !== i); await persistWebsites('Website dihapus', 'bg-red-600');
 };
 
-// ===================== ROUTING (CLEAN URL) =====================
+// ===================== ROUTING (CLEAN URL, TANPA #) =====================
 function showOnlyMain(show) {
   const mainSections = ['home','layanan','harga','pembayaran','kontak'];
   mainSections.forEach(id => {
@@ -1294,48 +1294,49 @@ function navigate(path, push = true) {
     else openAdminLogin();
   } else {
     showOnlyMain(true);
-    // anchor smooth scroll dari clean path seperti /#harga
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      const el = document.getElementById(hash);
-      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
-    } else {
-      window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
   }
 }
 
-// Intercept semua link anchor untuk path /#section -> scroll tanpa reload
+// Intercept semua link navigasi (clean URL) & tombol data-scroll
 document.addEventListener('click', function (e) {
-  const a = e.target.closest('a[href^="#"]');
+  const scrollEl = e.target.closest('[data-scroll]');
+  if (scrollEl) {
+    e.preventDefault();
+    const target = scrollEl.getAttribute('data-scroll');
+    // Pastikan section utama tampil
+    showOnlyMain(true);
+    // Scroll ke section
+    const el = document.getElementById(target);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
+    // Kalau sedang di /website atau /admin, balik ke root
+    const p = window.location.pathname.replace(/\/+$/, '') || '/';
+    if (p !== '/') history.pushState(null, '', '/');
+    return;
+  }
+  const a = e.target.closest('a[href]');
   if (!a) return;
   const href = a.getAttribute('href');
-  if (!href || href === '#') return;
-  e.preventDefault();
-  const hash = href.slice(1);
-  // update URL menjadi /#hash (tanpa reload)
-  history.pushState(null, '', '/#' + hash);
-  const el = document.getElementById(hash);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+  // Link clean path
+  if (href.startsWith('/')) {
+    e.preventDefault();
+    navigate(href, true);
+  }
 });
 
 window.addEventListener('popstate', function () {
-  navigate(window.location.pathname + window.location.hash, false);
+  navigate(window.location.pathname, false);
 });
 
-// Initial route
+// Initial route — pastikan clean URL
 document.addEventListener('DOMContentLoaded', function () {
-  const initialPath = window.location.pathname;
-  const hash = window.location.hash;
-  if (initialPath !== '/' && initialPath !== '/index.html') {
-    navigate(initialPath + hash, false);
-  } else {
-    // default clean
-    if (hash) {
-      const el = document.getElementById(hash.replace('#', ''));
-      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
-    }
+  let p = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (p === '/index.html') {
+    history.replaceState(null, '', '/');
+    p = '/';
   }
+  navigate(p, false);
 });
 
 // ===================== FIRESTORE =====================
