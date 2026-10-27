@@ -1272,19 +1272,71 @@ window.hapusWebsite = async function(i) {
   state.websites = state.websites.filter((_, k) => k !== i); await persistWebsites('Website dihapus', 'bg-red-600');
 };
 
-// ===================== ROUTING =====================
-function checkHash() {
-  const hash = window.location.hash.replace('#', '').toLowerCase();
-  const isLoggedIn = sessionStorage.getItem('mamancode_admin') === '1';
-  const onWeb = hash === 'website';
-  document.getElementById('websitePage').classList.toggle('hidden', !onWeb);
-  document.querySelectorAll('section:not(#websitePage)').forEach(sec => sec.classList.toggle('hidden', onWeb));
-  if (onWeb) window.scrollTo(0, 0);
-  else if (hash && hash !== 'admin') { const el = document.getElementById(hash); if (el) setTimeout(() => el.scrollIntoView(), 0); }
-  if (hash === 'admin') { if (isLoggedIn) openDashboard(); else openAdminLogin(); }
+// ===================== ROUTING (CLEAN URL) =====================
+function showOnlyMain(show) {
+  const mainSections = ['home','layanan','harga','pembayaran','kontak'];
+  mainSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('hidden', !show);
+  });
+  const wp = document.getElementById('websitePage');
+  if (wp) wp.classList.toggle('hidden', show);
 }
-window.addEventListener('hashchange', checkHash);
-window.addEventListener('load', checkHash);
+
+function navigate(path, push = true) {
+  if (push) history.pushState({ path }, '', path);
+  const p = (path || '/').replace(/\/+$/, '') || '/';
+  if (p === '/website') {
+    showOnlyMain(false);
+    window.scrollTo(0, 0);
+  } else if (p === '/admin') {
+    if (sessionStorage.getItem('mamancode_admin') === '1') openDashboard();
+    else openAdminLogin();
+  } else {
+    showOnlyMain(true);
+    // anchor smooth scroll dari clean path seperti /#harga
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+}
+
+// Intercept semua link anchor untuk path /#section -> scroll tanpa reload
+document.addEventListener('click', function (e) {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  if (!href || href === '#') return;
+  e.preventDefault();
+  const hash = href.slice(1);
+  // update URL menjadi /#hash (tanpa reload)
+  history.pushState(null, '', '/#' + hash);
+  const el = document.getElementById(hash);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+});
+
+window.addEventListener('popstate', function () {
+  navigate(window.location.pathname + window.location.hash, false);
+});
+
+// Initial route
+document.addEventListener('DOMContentLoaded', function () {
+  const initialPath = window.location.pathname;
+  const hash = window.location.hash;
+  if (initialPath !== '/' && initialPath !== '/index.html') {
+    navigate(initialPath + hash, false);
+  } else {
+    // default clean
+    if (hash) {
+      const el = document.getElementById(hash.replace('#', ''));
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
+    }
+  }
+});
 
 // ===================== FIRESTORE =====================
 onSnapshot(doc(db, 'settings', 'harga'), (snap) => {
